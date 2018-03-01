@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Vue components",
   "author": "zc <z304307393@163.com>",
-  "private": true,
+  "private": false,
+  "main": "packages/components/index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
