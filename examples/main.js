@@ -5,6 +5,17 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+import './assets/style/reset.css'
+
+import {
+  Icon,
+  Scroll,
+  Button
+} from '../packages/components'
+Vue.use(Icon)
+Vue.use(Scroll)
+Vue.use(Button)
+
 
 /* eslint-disable no-new */
 new Vue({

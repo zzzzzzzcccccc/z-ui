@@ -1,5 +1,11 @@
+import Icon from './Icon'
+import Scroll from './Scroll'
+import Bubble from './Bubble'
 import Button from './Button'
 
 export {
-  Button
+  Icon,
+  Scroll,
+  Button,
+  Bubble
 }

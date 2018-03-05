@@ -3,6 +3,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.conf')
 
 const env = process.env.NODE_ENV === 'testing' ? require('../config/test.env') : config.buildLib.env
@@ -48,6 +49,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         warnings: false
       },
       sourceMap: false
+    }),
+    new ExtractTextPlugin('../packages/styles/index.less', {
+      allChunks: true
     })
   ]
 })

@@ -1,8 +1,14 @@
 import {
+  Icon,
+  Scroll,
+  Bubble,
   Button
 } from './components'
 
 const components = [
+  Icon,
+  Scroll,
+  Bubble,
   Button
 ]
 
@@ -19,7 +25,11 @@ const install = (Vue, opts={}) => {
 
 const zUI = {
   version: '1.0.0',
-  install
+  install,
+  Icon,
+  Scroll,
+  Bubble,
+  Button
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
