@@ -7,7 +7,6 @@
         <z-button type="success" val="success" class="button"></z-button>
         <z-button type="warning" val="warning" class="button"></z-button>
         <z-button type="danger" val="danger" class="button"></z-button>
-        <z-button type="primary" val="primary" class="button" loading disabled></z-button>
         <z-button val="plain" class="button" plain></z-button>
         <z-button type="primary" val="plain" class="button" plain></z-button>
         <z-button type="success" val="plain" class="button" plain></z-button>
@@ -16,7 +15,8 @@
         <z-button type="primary" val="large" class="button" size="large"></z-button>
         <z-button type="primary" val="small" class="button" size="small"></z-button>
         <z-button type="primary" val="mini" class="button" size="mini"></z-button>
-        <z-button type="primary" val="disabled" class="button" disabled>disabled</z-button>
+        <z-button type="primary" val="disabled" class="button" disabled></z-button>
+        <z-button type="primary" val="loading" class="button" loading disabled></z-button>
       </div>
     </z-scroll>
   </div>

@@ -10,7 +10,7 @@ import './assets/style/reset.css'
 import {
   Icon,
   Scroll,
-  Button
+  Button,
 } from '../packages/components'
 Vue.use(Icon)
 Vue.use(Scroll)

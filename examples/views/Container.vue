@@ -6,9 +6,14 @@
       <div class="wrapper-main">
         <v-slider class="wrapper-slider" :list="srcList" @handleClick="handleSliderClick" :activePath="src"></v-slider>
         <section class="list-container">
-          <section class="list-window" :style="deviceTypeMap[deviceType]">
-            <iframe :style="deviceTypeMap[deviceType]" frameborder="0" :src="`http://${host}/#/${src}`"></iframe>
-          </section>
+          <div class="list-container-main">
+            <section class="list-doc">
+              <iframe frameborder="0" :src="`http://${host}/#/doc-${src}`" style="width: 100%;height: 100%; padding: 20px;"></iframe>
+            </section>
+            <section class="list-window" :style="deviceTypeMap[deviceType]">
+              <iframe :style="deviceTypeMap[deviceType]" frameborder="0" :src="`http://${host}/#/${src}`"></iframe>
+            </section>
+          </div>
         </section>
       </div>
     </div>
@@ -33,7 +38,7 @@
     data () {
       return {
         deviceType: 'ip6',
-        src: 'button'
+        src: 'icon'
       }
     },
     mounted () {
@@ -80,11 +85,23 @@
     flex: 1;
   }
 
-  .list-window{
+  .list-container-main{
+    width: 100%;
+    height: 100%;
     position: relative;
-    left: 50%;
+  }
+
+  .list-doc{
+    width: 100%;
+    height: 100%;
+    padding-right: 400px;
+  }
+
+  .list-window{
+    position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    right: 10px;
+    transform: translate(0, -50%) scale(1);
     box-sizing: content-box;
     border: 1px solid #333;
   }

@@ -1,0 +1,17 @@
+// 无限转动
+@keyframes global-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 透明度特效
+.z-fade-enter-active, .z-fade-leave-active {
+  transition: opacity .3s;
+}
+.z-fade-enter, .z-fade-leave-active {
+  opacity: 0;
+}

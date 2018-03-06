@@ -2,7 +2,8 @@ import {
   Icon,
   Scroll,
   Bubble,
-  Button
+  Button,
+  Toast
 } from './components'
 
 const components = [
@@ -21,6 +22,8 @@ const install = (Vue, opts={}) => {
   components.forEach((component) => {
     component.install(Vue)
   })
+
+  Vue.$toast = Vue.prototype.$toast = Toast
 }
 
 const zUI = {
@@ -29,7 +32,8 @@ const zUI = {
   Icon,
   Scroll,
   Bubble,
-  Button
+  Button,
+  Toast
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

@@ -8,7 +8,6 @@
               @pullingDown="pullingDown"
               :pullUpLoad="true"
               @pullingUp="pullingUp"
-              :bounce="false"
               ref="scroll">
       <ul slot="list">
         <li v-for="(item, index) in list" class="item-scroll-container">{{ item }}</li>
