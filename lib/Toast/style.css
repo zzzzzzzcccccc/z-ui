@@ -1,0 +1,99 @@
+
+@-webkit-keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.z-fade-enter-active, .z-fade-leave-active {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.z-fade-enter, .z-fade-leave-active {
+  opacity: 0;
+}
+.z-icon-loading{
+  -webkit-animation: global-rotate 1.2s infinite linear;
+          animation: global-rotate 1.2s infinite linear;
+}
+
+@-webkit-keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.z-fade-enter-active,
+.z-fade-leave-active {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.z-fade-enter,
+.z-fade-leave-active {
+  opacity: 0;
+}
+.z-toast {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.z-toast-container {
+  width: 100%;
+  text-align: center;
+}
+.z-toast-header-wrapper {
+  font-size: 32px;
+}
+.z-toast-message-pd {
+  padding-top: 10px;
+}

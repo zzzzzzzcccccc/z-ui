@@ -1,0 +1,1 @@
+@keyframes global-rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.z-fade-enter-active,.z-fade-leave-active{transition:opacity .3s}.z-fade-enter,.z-fade-leave-active{opacity:0}.z-icon-loading{animation:global-rotate 1.2s infinite linear}

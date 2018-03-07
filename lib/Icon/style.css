@@ -1,0 +1,32 @@
+
+@-webkit-keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.z-fade-enter-active, .z-fade-leave-active {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.z-fade-enter, .z-fade-leave-active {
+  opacity: 0;
+}
+.z-icon-loading{
+  -webkit-animation: global-rotate 1.2s infinite linear;
+          animation: global-rotate 1.2s infinite linear;
+}
