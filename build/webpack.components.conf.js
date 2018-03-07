@@ -32,6 +32,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     library: 'z-ui',
     libraryTarget: 'commonjs2'
   },
+  externals: {
+    vue: 'Vue'
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/workflow/production.html
     new webpack.DefinePlugin({

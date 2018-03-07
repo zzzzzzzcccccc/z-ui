@@ -32,6 +32,9 @@ module.exports = {
       'example': resolve('example')
     }
   },
+  externals: {
+    vue: 'Vue'
+  },
   module: {
     rules: [
       {
