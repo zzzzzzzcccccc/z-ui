@@ -53,6 +53,10 @@
   }
 </script>
 
-<style>
-  @import "../../../assets/styles/components/icon.less";
+<style lang="less">
+  @import "../../../assets/styles/utils/animate.less";
+
+  .z-icon-loading{
+    animation: global-rotate 1.2s infinite linear;
+  }
 </style>

@@ -255,7 +255,7 @@
   }
 </script>
 
-<style>
+<style lang="less">
   @import "../../../assets/styles/components/scroll.less";
 </style>
 

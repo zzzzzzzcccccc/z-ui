@@ -19,14 +19,16 @@
             transform: rotate(360deg);
 }
 }
-.z-fade-enter-active, .z-fade-leave-active {
+.z-fade-enter-active,
+.z-fade-leave-active {
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
 }
-.z-fade-enter, .z-fade-leave-active {
+.z-fade-enter,
+.z-fade-leave-active {
   opacity: 0;
 }
-.z-icon-loading{
+.z-icon-loading {
   -webkit-animation: global-rotate 1.2s infinite linear;
           animation: global-rotate 1.2s infinite linear;
 }

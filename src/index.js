@@ -1,14 +1,16 @@
-import Icon from './components/Icon'
-import Scroll from './components/Scroll'
-import Bubble from './components/Bubble'
-import Button from './components/Button'
-import Toast from './components/Toast'
+import {
+  Bubble,
+  Button,
+  Icon,
+  Toast,
+  Scroll
+} from './components'
 
 const components = [
-  Icon,
-  Scroll,
   Bubble,
-  Button
+  Button,
+  Icon,
+  Scroll
 ]
 
 const install = (Vue, opts={}) => {

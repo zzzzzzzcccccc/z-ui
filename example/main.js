@@ -7,9 +7,11 @@ import router from './router'
 Vue.config.productionTip = false
 import './assets/style/reset.css'
 
-import Icon from '../src/components/Icon'
-import Scroll from '../src/components/Scroll'
-import Button from '../src/components/Button'
+import {
+  Icon,
+  Scroll,
+  Button
+} from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
 Vue.use(Button)

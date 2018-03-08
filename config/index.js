@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {},
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '0.0.0.0', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
@@ -45,10 +45,15 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   buildExample: {
-    entry: {
-      app: './example/main.js'
-    },
+    index: path.resolve(__dirname, '../dist/index.html'),
+
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: ''
+    assetsSubDirectory: 'static',
+    assetsPublicPath: './',
+    productionSourceMap: false,
+    devtool: '#source-map',
+    productionGzip: false,
+    productionGzipExtensions: ['js', 'css'],
+    bundleAnalyzerReport: process.env.npm_config_report
   }
 }

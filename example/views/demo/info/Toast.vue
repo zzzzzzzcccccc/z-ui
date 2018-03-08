@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import Toast from '../../../../packages/components/Toast'
+  import { Toast } from '../../../../src/components'
 
   export default {
     methods: {
@@ -37,15 +37,12 @@
         Toast('我是Toast')
       },
       showTypeToast (type, message) {
-        Toast({
-          type,
-          message
-        })
+        Toast({type, message})
       }
     }
   }
 </script>
 
-<style>
+<style lang="less">
   @import "../../../assets/style/item.less";
 </style>
