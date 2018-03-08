@@ -3,14 +3,17 @@ import {
   Button,
   Icon,
   Toast,
-  Scroll
+  Scroll,
+  Swipe,
+  Alert
 } from './components'
 
 const components = [
   Bubble,
   Button,
   Icon,
-  Scroll
+  Scroll,
+  Swipe
 ]
 
 const install = (Vue, opts={}) => {
@@ -30,6 +33,7 @@ const zUI = {
   version: '1.0.0',
   install,
   Toast,
+  Alert,
   ...components
 }
 

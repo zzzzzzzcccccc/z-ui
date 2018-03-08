@@ -10,11 +10,13 @@ import './assets/style/reset.css'
 import {
   Icon,
   Scroll,
-  Button
+  Button,
+  Swipe
 } from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
 Vue.use(Button)
+Vue.use(Swipe)
 
 
 /* eslint-disable no-new */

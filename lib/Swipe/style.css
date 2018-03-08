@@ -1,0 +1,57 @@
+
+.z-swipe-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.z-swipe-list-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* dots */
+.z-swipe-dots-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  padding: 0 12px;
+  text-align: center;
+  z-index: 10;
+}
+.z-swipe-dots-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: inline-block;
+  margin: 0 4px;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+.z-swipe-active {
+  width: 20px;
+  background-color: #409EFF;
+  border-radius: 4px;
+}
+/* item */
+.z-swipe-item-container {
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+}
+.z-swipe-item-container a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  text-decoration: none;
+}
+.z-swipe-item-container img {
+  width: 100%;
+  display: block;
+  height: 100%;
+}

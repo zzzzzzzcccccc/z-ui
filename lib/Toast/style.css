@@ -28,6 +28,74 @@
 .z-fade-leave-active {
   opacity: 0;
 }
+@-webkit-keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+@keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
 .z-icon-loading {
   -webkit-animation: global-rotate 1.2s infinite linear;
           animation: global-rotate 1.2s infinite linear;
@@ -61,6 +129,74 @@
 .z-fade-enter,
 .z-fade-leave-active {
   opacity: 0;
+}
+@-webkit-keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+@keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
 }
 .z-toast {
   position: fixed;

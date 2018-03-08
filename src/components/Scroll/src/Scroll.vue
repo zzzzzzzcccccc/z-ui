@@ -1,128 +1,137 @@
 <template>
-  <div ref="scrollWrapper" class="z-scroll-container">
-
+  <div ref="scrollWrapper" class="z-scroll-wrapper">
     <div class="z-scroll-content">
-      <div class="z-scroll-header-wrapper" :style="pullDownStyle" v-if="pullDownRefresh">
-        <div class="before-trigger" v-if="beforePullDown">
+      <div ref="listWrapper" class="z-scroll-list-wrapper">
+        <slot name="list">
+          <ul class="z-scroll-list">
+            <li @click="clickItem(item)" class="z-scroll-list-item" v-for="item in data">{{item}}</li>
+          </ul>
+        </slot>
+      </div>
+      <slot name="pullup" :pullUpLoad="pullUpLoad" :isPullUpLoad="isPullUpLoad">
+        <div class="z-pullup-wrapper" v-if="pullUpLoad">
+          <div class="z-before-trigger" v-if="!isPullUpLoad">
+            <span>{{ pullUpTxt }}</span>
+          </div>
+          <div class="z-after-trigger" v-else>
+            <icon name="loading" />
+          </div>
+        </div>
+      </slot>
+    </div>
+    <slot
+       name="pulldown"
+      :pullDownRefresh="pullDownRefresh"
+      :pullDownStyle="pullDownStyle"
+      :beforePullDown="beforePullDown"
+      :isPullingDown="isPullingDown"
+      :bubbleY="bubbleY">
+      <div class="z-pulldown-wrapper" :style="pullDownStyle" v-if="pullDownRefresh">
+        <div class="z-before-trigger" v-if="beforePullDown">
           <bubble :y="bubbleY"></bubble>
         </div>
-        <div class="after-trigger" v-else>
-          <div v-if="isPullingDown" class="loading">
-            <slot name="header"><icon name="loading" />加载中...</slot>
+        <div class="z-after-trigger" v-else>
+          <div v-if="isPullingDown" class="z-scroll-loading">
+            <icon name="loading" />
           </div>
-          <div v-else>
-            <slot name="refresh" v-if="$slots.refresh || refreshTxt"><span>{{ refreshTxt }}</span></slot>
-          </div>
+          <div v-else><span>{{ refreshTxt }}</span></div>
         </div>
       </div>
-
-      <div ref="listWrapper" class="z-scroll-list-wrapper" v-if="$slots.list">
-        <slot name="list"></slot>
-      </div>
-
-      <!--上啦展示-->
-      <div class="z-scroll-footer-wrapper" v-if="pullUpLoad">
-        <div class="z-scroll-footer-wrapper-info" v-if="isPullUpLoad">
-          <slot name="footer"><icon name="loading" />加载中...</slot>
-        </div>
-      </div>
-    </div>
+    </slot>
   </div>
 </template>
 
 <script>
   import BScroll from 'better-scroll'
-  import { getRect } from './public'
   import Bubble from '../../Bubble'
   import Icon from '../../Icon'
+  import { getRect } from './public'
 
-  const COMPONENT_NAME = 'zScroll'
   const DIRECTION_H = 'horizontal'
   const DIRECTION_V = 'vertical'
+  const DEFAULT_REFRESH_TXT = 'Refresh success'
+  const EVENT_SCROLL = 'scroll'
+  const EVENT_BEFORE_SCROLL_START = 'before-scroll-start'
+  const EVENT_CLICK = 'click'
+  const EVENT_PULLING_DOWN = 'pulling-down'
+  const EVENT_PULLING_UP = 'pulling-up'
+
+  const DEFAULT_OPTIONS = {
+    observeDOM: true,
+    click: true,
+    probeType: 1,
+    scrollbar: false,
+    pullDownRefresh: false,
+    pullUpLoad: false
+  }
 
   export default {
-    name: COMPONENT_NAME,
-    components: {
-      Bubble,
-      Icon
-    },
+    name: 'zScroll',
     props: {
-      data: { // 列表数据
+      data: {
         type: Array,
-        default: function () {
+        default() {
           return []
         }
       },
-      probeType: { // 1 滚动的时候会派发scroll事件，会截流。2滚动的时候实时派发scroll事件，不会截流。 3除了实时派发scroll事件，在swipe的情况下仍然能实时派发scroll事件
-        type: Number,
-        default: 1
+      options: {
+        type: Object,
+        default() {
+          return {}
+        }
       },
-      bounce: { // 是否启用回弹动画效果
-        type: Boolean,
-        default: true
-      },
-      click: { // 是否开启点击列表事件
-        type: Boolean,
-        default: true
-      },
-      listenScroll: { // 是否监听滚动事件
+      listenScroll: {
         type: Boolean,
         default: false
       },
-      listenBeforeScroll: { // 是否监听滚动开始事件
+      listenBeforeScroll: {
         type: Boolean,
         default: false
       },
-      direction: { // 滚动方向 默认竖向
+      direction: {
         type: String,
         default: DIRECTION_V
-      },
-      scrollbar: { // 是否显示滚动条
-        type: null,
-        default: false
-      },
-      pullDownRefresh: { // 是否开启下拉事件
-        type: null,
-        default: false
-      },
-      pullUpLoad: { // 是否开启上啦事件
-        type: null,
-        default: false
-      },
-      startY: { // 起始x轴方向
-        type: Number,
-        default: 0
       },
       refreshDelay: {
         type: Number,
         default: 20
       },
-      freeScroll: { // 是否开启 竖向 横向滚动
-        type: Boolean,
-        default: false
-      },
-      mouseWheel: {
-        type: Boolean,
-        default: false
-      },
-      refreshTxt: {
-        type: [Number, String],
-        default: ''
-      },
+      listRef: {
+        type: String,
+        default: 'list'
+      }
     },
     data() {
       return {
         beforePullDown: true,
-        isRebounding: false,
         isPullingDown: false,
         isPullUpLoad: false,
         pullUpDirty: true,
         bubbleY: 0,
-        pullDownStyle: `top:-50px`,
-        pullDownInitTop: -50
+        pullDownStyle: ''
+      }
+    },
+    computed: {
+      pullUpLoad() {
+        return this.options.pullUpLoad
+      },
+      pullDownRefresh() {
+        return this.options.pullDownRefresh
+      },
+      pullUpTxt() {
+        const pullUpLoad = this.pullUpLoad
+        const txt = pullUpLoad && pullUpLoad.txt
+        const moreTxt = txt && txt.more || ''
+        const noMoreTxt = txt && txt.noMore || ''
+        return this.pullUpDirty ? moreTxt : noMoreTxt
+      },
+      refreshTxt() {
+        const pullDownRefresh = this.pullDownRefresh
+        return pullDownRefresh && pullDownRefresh.txt || DEFAULT_REFRESH_TXT
       }
     },
     created() {
+      this.pullDownInitTop = -50
       this.$nextTick(() => {
         this.initScroll()
       })
@@ -132,31 +141,20 @@
         if (!this.$refs.scrollWrapper) {
           return
         }
-        if (this.$refs.listWrapper && (this.pullDownRefresh || this.pullUpLoad)) {
-          this.$refs.listWrapper.style.minHeight = `${getRect(this.$refs.scrollWrapper).height + 1}px`
-        }
-        let options = {
-          probeType: this.probeType,
-          click: this.click,
-          scrollY: this.freeScroll || this.direction === DIRECTION_V,
-          scrollX: this.freeScroll || this.direction === DIRECTION_H,
-          scrollbar: this.scrollbar,
-          pullDownRefresh: this.pullDownRefresh,
-          pullUpLoad: this.pullUpLoad,
-          startY: this.startY,
-          freeScroll: this.freeScroll,
-          mouseWheel: this.mouseWheel,
-          bounce: this.bounce
-        }
+        this._calculateMinHeight()
+        let options = Object.assign({}, DEFAULT_OPTIONS, {
+          scrollY: this.direction === DIRECTION_V,
+          scrollX: this.direction === DIRECTION_H
+        }, this.options)
         this.scroll = new BScroll(this.$refs.scrollWrapper, options)
         if (this.listenScroll) {
           this.scroll.on('scroll', (pos) => {
-            this.$emit('scroll', pos)
+            this.$emit(EVENT_SCROLL, pos)
           })
         }
         if (this.listenBeforeScroll) {
           this.scroll.on('beforeScrollStart', () => {
-            this.$emit('beforeScrollStart')
+            this.$emit(EVENT_BEFORE_SCROLL_START)
           })
         }
         if (this.pullDownRefresh) {
@@ -173,7 +171,11 @@
         this.scroll && this.scroll.enable()
       },
       refresh() {
+        this._calculateMinHeight()
         this.scroll && this.scroll.refresh()
+      },
+      destroy() {
+        this.scroll.destroy()
       },
       scrollTo() {
         this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
@@ -181,67 +183,66 @@
       scrollToElement() {
         this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
       },
-      clickItem(e, item) {
-        this.$emit('click', item)
-      },
-      destroy() {
-        this.scroll.destroy()
+      clickItem(item) {
+        this.$emit(EVENT_CLICK, item)
       },
       forceUpdate(dirty) {
         if (this.pullDownRefresh && this.isPullingDown) {
           this.isPullingDown = false
           this._reboundPullDown().then(() => {
-            this._afterPullDown()
+            this._afterPullDown(dirty)
           })
         } else if (this.pullUpLoad && this.isPullUpLoad) {
           this.isPullUpLoad = false
           this.scroll.finishPullUp()
           this.pullUpDirty = dirty
-          this.refresh()
+          dirty && this.refresh()
         } else {
-          this.refresh()
+          dirty && this.refresh()
+        }
+      },
+      _calculateMinHeight() {
+        if (this.$refs.listWrapper && (this.pullDownRefresh || this.pullUpLoad)) {
+          this.$refs.listWrapper.style.minHeight = `${getRect(this.$refs.scrollWrapper).height + 1}px`
         }
       },
       _initPullDownRefresh() {
         this.scroll.on('pullingDown', () => {
           this.beforePullDown = false
           this.isPullingDown = true
-          this.$emit('pullingDown')
+          this.$emit(EVENT_PULLING_DOWN)
         })
         this.scroll.on('scroll', (pos) => {
           if (this.beforePullDown) {
             this.bubbleY = Math.max(0, pos.y + this.pullDownInitTop)
-            this.pullDownStyle = `top:${Math.min(pos.y + this.pullDownInitTop, -10)}px`
+            this.pullDownStyle = `top:${Math.min(pos.y + this.pullDownInitTop, 10)}px`
           } else {
             this.bubbleY = 0
-          }
-          if (this.isRebounding) {
-            this.pullDownStyle = `top:${10 - (this.pullDownRefresh.stop - pos.y)}px`
+            this.pullDownStyle = `top:${Math.min(pos.y - 30, 10)}px`
           }
         })
       },
       _initPullUpLoad() {
         this.scroll.on('pullingUp', () => {
           this.isPullUpLoad = true
-          this.$emit('pullingUp')
+          this.$emit(EVENT_PULLING_UP)
         })
       },
       _reboundPullDown() {
         const {stopTime = 600} = this.pullDownRefresh
         return new Promise((resolve) => {
           setTimeout(() => {
-            this.isRebounding = true
             this.scroll.finishPullDown()
+            this.isPullingDown = false
             resolve()
           }, stopTime)
         })
       },
-      _afterPullDown() {
+      _afterPullDown(dirty) {
         setTimeout(() => {
           this.pullDownStyle = `top:${this.pullDownInitTop}px`
           this.beforePullDown = true
-          this.isRebounding = false
-          this.refresh()
+          dirty && this.refresh()
         }, this.scroll.options.bounceTime)
       }
     },
@@ -251,6 +252,10 @@
           this.forceUpdate(true)
         }, this.refreshDelay)
       }
+    },
+    components: {
+      Bubble,
+      Icon
     }
   }
 </script>
@@ -258,5 +263,3 @@
 <style lang="less">
   @import "../../../assets/styles/components/scroll.less";
 </style>
-
-

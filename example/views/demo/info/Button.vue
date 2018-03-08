@@ -16,11 +16,21 @@
         <z-button type="primary" val="small" class="button" size="small"></z-button>
         <z-button type="primary" val="mini" class="button" size="mini"></z-button>
         <z-button type="primary" val="disabled" class="button" disabled></z-button>
-        <z-button type="primary" val="loading" class="button" loading disabled></z-button>
+        <z-button type="primary" val="loading" class="button" loading @click="add"></z-button>
       </div>
     </z-scroll>
   </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      add (e) {
+        console.log(e)
+      }
+    }
+  }
+</script>
 
 <style lang="less" scoped>
   @import "../../../assets/style/item.less";

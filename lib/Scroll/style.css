@@ -28,20 +28,85 @@
 .z-fade-leave-active {
   opacity: 0;
 }
+@-webkit-keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+@keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
 .z-icon-loading {
   -webkit-animation: global-rotate 1.2s infinite linear;
           animation: global-rotate 1.2s infinite linear;
 }
 
-.z-scroll-container {
+.z-scroll-wrapper {
   position: relative;
   height: 100%;
+  overflow: hidden;
 }
-.z-scroll-content {
-  position: relative;
-  z-index: 1;
-}
-.z-scroll-header-wrapper {
+.z-pulldown-wrapper {
   position: absolute;
   width: 100%;
   left: 0;
@@ -57,7 +122,7 @@
   -webkit-transition: all;
   transition: all;
 }
-.z-scroll-footer-wrapper {
+.z-pullup-wrapper {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,5 +133,4 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px 0;
 }

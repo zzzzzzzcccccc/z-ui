@@ -8,11 +8,15 @@ import {
   Scroll,
   Toast,
   Button,
+  Swipe,
+  Alert,
 
   docIcon,
   docScroll,
   docToast,
-  docButton
+  docButton,
+  docSwipe,
+  docAlert
 } from '../views'
 
 Vue.use(Router)
@@ -26,10 +30,14 @@ export default new Router({
     {path: '/toast', component: Toast},
     {path: '/button', component: Button},
     {path: '/scroll', component: Scroll},
+    {path: '/swipe', component: Swipe},
+    {path: '/alert', component: Alert},
 
     {path: '/doc-icon', component: docIcon},
     {path: '/doc-toast', component: docToast},
     {path: '/doc-button', component: docButton},
-    {path: '/doc-scroll', component: docScroll}
+    {path: '/doc-scroll', component: docScroll},
+    {path: '/doc-swipe', component: docSwipe},
+    {path: '/doc-alert', component: docAlert}
   ]
 })
