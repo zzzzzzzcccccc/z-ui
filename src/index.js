@@ -5,7 +5,8 @@ import {
   Toast,
   Scroll,
   Swipe,
-  Alert
+  Alert,
+  Popup
 } from './components'
 
 const components = [
@@ -13,7 +14,8 @@ const components = [
   Button,
   Icon,
   Scroll,
-  Swipe
+  Swipe,
+  Popup
 ]
 
 const install = (Vue, opts={}) => {

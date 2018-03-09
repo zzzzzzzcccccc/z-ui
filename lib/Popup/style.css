@@ -1,0 +1,85 @@
+
+.z-popup-util-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.56);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.z-popup-wrapper {
+  position: fixed;
+  z-index: 3000;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+.z-popup-bottom {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0) scale(1);
+          transform: translate3d(-50%, 0, 0) scale(1);
+  width: 100%;
+}
+.z-popup-top {
+  top: 0;
+  right: auto;
+  left: 50%;
+  bottom: auto;
+  -webkit-transform: translate3d(-50%, 0, 0) scale(1);
+          transform: translate3d(-50%, 0, 0) scale(1);
+  width: 100%;
+}
+.z-popup-left {
+  top: 50%;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translate3d(0, -50%, 0) scale(1);
+          transform: translate3d(0, -50%, 0) scale(1);
+  height: 100%;
+}
+.z-popup-right {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: translate3d(0, -50%, 0) scale(1);
+          transform: translate3d(0, -50%, 0) scale(1);
+  height: 100%;
+}
+.z-popup-left-screen,
+.z-popup-right-screen {
+  width: 100%;
+}
+.z-popup-top-screen,
+.z-popup-bottom-screen {
+  height: 100%;
+}
+/* 底部滑出 */
+.z-popup-slide-bottom-enter,
+.z-popup-slide-bottom-leave-active {
+  -webkit-transform: translate3d(-50%, 100%, 0) scale(1);
+          transform: translate3d(-50%, 100%, 0) scale(1);
+}
+/* 顶部滑出 */
+.z-popup-slide-top-enter,
+.z-popup-slide-top-leave-active {
+  -webkit-transform: translate3d(-50%, -100%, 0) scale(1);
+          transform: translate3d(-50%, -100%, 0) scale(1);
+}
+/* 左侧滑出 */
+.z-popup-slide-left-enter,
+.z-popup-slide-left-leave-active {
+  -webkit-transform: translate3d(-100%, -50%, 0) scale(1);
+          transform: translate3d(-100%, -50%, 0) scale(1);
+}
+/* 右侧滑出 */
+.z-popup-slide-right-enter,
+.z-popup-slide-right-leave-active {
+  -webkit-transform: translate3d(100%, -50%, 0) scale(1);
+          transform: translate3d(100%, -50%, 0) scale(1);
+}

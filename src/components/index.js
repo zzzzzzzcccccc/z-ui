@@ -5,6 +5,7 @@ import Toast from './Toast'
 import Scroll from './Scroll'
 import Swipe from './Swipe'
 import Alert from './Alert'
+import Popup from './Popup'
 
 export {
   Bubble,
@@ -13,5 +14,6 @@ export {
   Toast,
   Scroll,
   Swipe,
-  Alert
+  Alert,
+  Popup
 }

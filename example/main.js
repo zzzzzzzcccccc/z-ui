@@ -11,12 +11,14 @@ import {
   Icon,
   Scroll,
   Button,
-  Swipe
+  Swipe,
+  Popup
 } from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
 Vue.use(Button)
 Vue.use(Swipe)
+Vue.use(Popup)
 
 
 /* eslint-disable no-new */

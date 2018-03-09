@@ -1,5 +1,5 @@
 <template>
-  <div class="z-popup-util-container" :style="{ zIndex: zIndex }" v-show="visible">
+  <div class="z-popup-util-container" :style="{ zIndex: zIndex }" v-show="visible" @click="handleClick">
     <slot></slot>
   </div>
 </template>
@@ -14,6 +14,11 @@
       zIndex: {
         type: Number,
         default: 2000
+      }
+    },
+    methods: {
+      handleClick () {
+        this.$emit('click')
       }
     }
   }

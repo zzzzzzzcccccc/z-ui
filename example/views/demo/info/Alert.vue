@@ -1,18 +1,20 @@
 <template>
-  <div class="item">
-    <div style="margin: 10px auto">
-      <z-button val="alert弹窗" @click="showAlert"></z-button>
+  <z-scroll style="width: 92%;margin: 0 auto;height: 300px;">
+    <div slot="list">
+      <div style="margin: 10px auto">
+        <z-button val="alert弹窗" @click="showAlert"></z-button>
+      </div>
+      <div style="margin: 10px auto">
+        <z-button val="alert弹窗带Icon" @click="showAlertIcon"></z-button>
+      </div>
+      <div style="margin: 10px auto">
+        <z-button val="二次确认弹窗" @click="showConfirm"></z-button>
+      </div>
+      <div style="margin: 10px auto">
+        <z-button val="二次确认弹窗带Icon" @click="showConfirmIcon"></z-button>
+      </div>
     </div>
-    <div style="margin: 10px auto">
-      <z-button val="alert弹窗带Icon" @click="showAlertIcon"></z-button>
-    </div>
-    <div style="margin: 10px auto">
-      <z-button val="二次确认弹窗" @click="showConfirm"></z-button>
-    </div>
-    <div style="margin: 10px auto">
-      <z-button val="二次确认弹窗带Icon" @click="showConfirmIcon"></z-button>
-    </div>
-  </div>
+  </z-scroll>
 </template>
 
 <script>
@@ -21,15 +23,10 @@
   export default {
     methods: {
       showAlert () {
-        Alert({
-          message: '我是一个普通Alert'
-        })
+        Alert({ message: '我是一个普通Alert' })
       },
       showAlertIcon () {
-        Alert({
-          message: '我是一个带iconAlert',
-          iconName: 'success'
-        })
+        Alert({ message: '我是一个带iconAlert',  iconName: 'success' })
       },
       showConfirm () {
         Alert({
