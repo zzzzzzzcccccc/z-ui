@@ -1,0 +1,46 @@
+@import "../utils/const.less";
+
+.z-spinner-container{
+  position: fixed;
+  z-index: 2500;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+.z-spinner-wrapper{
+  position: fixed;
+  z-index: 3000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.56);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.z-spinner-header{
+  font-size: @largeFontSize;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.z-spinner-body{
+  width: 100%;
+  padding-top: 8px;
+  color: #fff;
+  font-size: @smallFontSize;
+}

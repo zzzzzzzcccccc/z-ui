@@ -30,12 +30,7 @@ const Alert = (options={}) => {
   Vue.nextTick(() => {
     instance.visible = true
     instance.handleBtnClick = (boolean) => {
-
       if (options.callback) options.callback(boolean)
-      // 因为只会生成一个dom 反复调用会出现错乱所以关闭初始化一下
-      for (const key in DEFAULT) {
-        instance[key] = DEFAULT[key]
-      }
 
       instance.visible = false
     }

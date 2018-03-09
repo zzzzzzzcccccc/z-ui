@@ -6,6 +6,7 @@ import Scroll from './Scroll'
 import Swipe from './Swipe'
 import Alert from './Alert'
 import Popup from './Popup'
+import Spinner from './Spinner'
 
 export {
   Bubble,
@@ -15,5 +16,6 @@ export {
   Scroll,
   Swipe,
   Alert,
-  Popup
+  Popup,
+  Spinner
 }

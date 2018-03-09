@@ -10,6 +10,7 @@ import Toast from './demo/info/Toast'
 import Swipe from './demo/info/Swipe'
 import Alert from './demo/info/Alert'
 import Popup from './demo/info/Popup'
+import Spinner from './demo/info/Spinner'
 
 // doc列表
 import docIcon from './demo/doc/Icon'
@@ -19,6 +20,7 @@ import docToast from './demo/doc/Toast'
 import docSwipe from './demo/doc/Swipe'
 import docAlert from './demo/doc/Alert'
 import docPopup from './demo/doc/Popup'
+import docSpinner from './demo/doc/Spinner'
 
 export {
   Container,
@@ -31,6 +33,7 @@ export {
   Swipe,
   Alert,
   Popup,
+  Spinner,
 
   docIcon,
   docScroll,
@@ -38,5 +41,6 @@ export {
   docToast,
   docSwipe,
   docAlert,
-  docPopup
+  docPopup,
+  docSpinner
 }

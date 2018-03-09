@@ -6,7 +6,8 @@ import {
   Scroll,
   Swipe,
   Alert,
-  Popup
+  Popup,
+  Spinner
 } from './components'
 
 const components = [
@@ -29,6 +30,8 @@ const install = (Vue, opts={}) => {
   })
 
   Vue.$toast = Vue.prototype.$toast = Toast
+  Vue.$Alert = Vue.prototype.$Alert = Alert
+  Vue.$Spinner = Vue.prototype.$Spinner = Spinner
 }
 
 const zUI = {
@@ -36,6 +39,7 @@ const zUI = {
   install,
   Toast,
   Alert,
+  Spinner,
   ...components
 }
 

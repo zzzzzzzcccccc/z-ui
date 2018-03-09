@@ -5,7 +5,8 @@ export const srcList = [
   {path: 'scroll', label: '滚动框'},
   {path: 'swipe', label: '轮播图'},
   {path: 'alert', label: '弹窗'},
-  {path: 'popup', label: '滑出层'}
+  {path: 'popup', label: '滑出层'},
+  {path: 'spinner', label: '加载'}
 ]
 
 export const deviceTypeMap = {
