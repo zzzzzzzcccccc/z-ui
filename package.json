@@ -12,7 +12,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "build": "node build/build.js",
-    "buildExample": "node build/example/build.js"
+    "buildExample": "node build/example/build.js",
+    "pm2Prod": "NODE_ENV=production pm2 start app.js --name z-ui-port-8084"
   },
   "dependencies": {
     "better-scroll": "^1.8.4",

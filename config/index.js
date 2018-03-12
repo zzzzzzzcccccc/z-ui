@@ -45,14 +45,17 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   buildExample: {
-    index: path.resolve(__dirname, '../dist/index.html'),
+    // Template for index.html
+    index: path.resolve(__dirname, '../z-uiExample/index.html'),
 
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../z-uiExample'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://www.baidu.com',
+    assetsPublicPath: './',
+
     productionSourceMap: false,
     devtool: '#source-map',
-    productionGzip: true,
+
+    productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
     bundleAnalyzerReport: process.env.npm_config_report
   }

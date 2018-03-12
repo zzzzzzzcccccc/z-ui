@@ -83,9 +83,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         return (
           module.resource &&
           /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
-          ) === 0
+          module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0
         )
       }
     }),
@@ -108,8 +106,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
+        from: path.resolve(__dirname, '../../static'),
+        to: config.buildExample.assetsSubDirectory,
         ignore: ['.*']
       }
     ])
@@ -125,7 +123,7 @@ if (config.build.productionGzip) {
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
-        config.build.productionGzipExtensions.join('|') +
+        config.buildExample.productionGzipExtensions.join('|') +
         ')$'
       ),
       threshold: 10240,
@@ -134,7 +132,7 @@ if (config.build.productionGzip) {
   )
 }
 
-if (config.build.bundleAnalyzerReport) {
+if (config.buildExample.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
