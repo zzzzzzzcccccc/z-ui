@@ -3,7 +3,8 @@
           :class="[`z-button-${type}`,
           `z-button-${size}`,
           {'z-button-disabled': disabled, 'z-button-round': round, 'z-button-loading': loading}, plain ? `z-button-${type}-plain` : '']"
-          :disabled="disabled" @click="handleClick">
+          :disabled="disabled"
+          @click="handleClick">
     <span class="z-button-icon" v-if="icon || $slots.icon || loading">
       <slot name="icon"><icon name="loading" /></slot>
     </span>

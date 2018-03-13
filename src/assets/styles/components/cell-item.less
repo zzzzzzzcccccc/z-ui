@@ -1,0 +1,82 @@
+@import "../utils/const.less";
+
+.z-cell-item-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 16px 10px;
+  position: relative;
+  background-color: #fff;
+  &:not(:last-child):after {
+    content: "";
+    pointer-events: none;
+    border-bottom: 1px solid @grayColor;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+.z-cell-item-title{
+  flex: 1;
+  text-align: left;
+}
+.z-cell-item-title-top{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: @smallFontSize;
+  color: @blackColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.z-cell-item-title-bottom{
+  width: 100%;
+  display: block;
+  font-size: @miniFontSize;
+  color: @sBlackColor;
+  padding-top: 6px;
+}
+
+.z-cell-item-label{
+  flex: 1;
+  text-align: right;
+  font-size: @smallFontSize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.z-cell-item-label-icon{
+  color: @sBlackColor;
+}
+
+.z-cell-active{
+  cursor: pointer;
+}
+.z-cell-active:active{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.z-cell-disabled{
+  pointer-events: none;
+}
+.z-cell-disabled:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+

@@ -1,0 +1,110 @@
+@import "../utils/const.less";
+
+.z-tag-container{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+}
+.z-tag-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0;
+  }
+}
+/* size */
+.z-tag-normal{
+  font-size: @normalFontSize;
+  padding: 4px 16px;
+}
+.z-tag-mini{
+  font-size: @miniFontSize;
+  padding: 1px 4px;
+}
+.z-tag-small{
+  font-size: @smallFontSize;
+  padding: 2px 8px;
+}
+.z-tag-large{
+  font-size: @largeFontSize;
+  padding: 8px 32px;
+}
+/* type */
+.z-tag-info{
+  background: @infoColor;
+  color: #fff;
+}
+.z-tag-primary{
+  background: @primaryColor;
+  color: #fff;
+}
+.z-tag-success{
+  background: @successColor;
+  color: #fff;
+}
+.z-tag-warning{
+  background: @warningColor;
+  color: #fff;
+}
+.z-tag-danger{
+  background: @dangerColor;
+  color: #fff;
+}
+/* plain */
+.z-tag-info-plain{
+  background: transparent;
+  border: 1px solid @infoColor;
+  color: @infoColor;
+}
+.z-tag-primary-plain{
+  background: transparent;
+  border: 1px solid @primaryColor;
+  color: @primaryColor;
+}
+.z-tag-success-plain{
+  background: transparent;
+  border: 1px solid @successColor;
+  color: @successColor;
+}
+.z-tag-warning-plain{
+  background: transparent;
+  border: 1px solid @warningColor;
+  color: @warningColor;
+}
+.z-tag-danger-plain{
+  background: transparent;
+  border: 1px solid @dangerColor;
+  color: @dangerColor;
+}
+/* round */
+.z-tag-round{
+  border-radius: 4px;
+}
+/* disabled */
+.z-tag-disabled{
+  opacity: 0.6;
+  pointer-events: none;
+}
+/* link */
+.z-tag-link{
+  cursor: pointer;
+  &:active .z-tag-wrapper:after{
+    opacity: 0.2;
+  }
+}
+
+.z-tag-icon{
+  padding-right: 3px;
+}

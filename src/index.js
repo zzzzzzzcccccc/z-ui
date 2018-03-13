@@ -7,7 +7,10 @@ import {
   Swipe,
   Alert,
   Popup,
-  Spinner
+  Spinner,
+  Notice,
+  Cell,
+  Tag
 } from './components'
 
 const components = [
@@ -16,7 +19,10 @@ const components = [
   Icon,
   Scroll,
   Swipe,
-  Popup
+  Popup,
+  Notice,
+  Cell,
+  Tag
 ]
 
 const install = (Vue, opts={}) => {

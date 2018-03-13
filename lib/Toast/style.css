@@ -96,6 +96,31 @@
             transform: scale(1);
 }
 }
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
 .z-icon-loading {
   -webkit-animation: global-rotate 1.2s infinite linear;
           animation: global-rotate 1.2s infinite linear;
@@ -196,6 +221,31 @@
 100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+}
+}
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
 }
 }
 .z-toast {

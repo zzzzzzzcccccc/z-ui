@@ -33,7 +33,9 @@
           {name: 'start', label: 'start'},
           {name: 'arrowRight', label: 'arrowRight'},
           {name: 'lineArrowRight', label: 'lineArrowRight'},
-          {name: 'edit', label: 'edit'}
+          {name: 'edit', label: 'edit'},
+          {name: 'notice', label: 'notice'},
+          {name: 'search', label: 'search'}
         ]
       }
     }

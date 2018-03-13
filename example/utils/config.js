@@ -6,7 +6,10 @@ export const srcList = [
   {path: 'swipe', label: '轮播图'},
   {path: 'alert', label: '弹窗'},
   {path: 'popup', label: '滑出层'},
-  {path: 'spinner', label: '加载'}
+  {path: 'spinner', label: '加载'},
+  {path: 'notice', label: '公告'},
+  {path: 'cell', label: '单元格'},
+  {path: 'tag', label: 'tag标签'}
 ]
 
 export const deviceTypeMap = {

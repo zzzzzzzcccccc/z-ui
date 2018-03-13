@@ -11,6 +11,9 @@ import Swipe from './demo/info/Swipe'
 import Alert from './demo/info/Alert'
 import Popup from './demo/info/Popup'
 import Spinner from './demo/info/Spinner'
+import Notice from './demo/info/Notice'
+import Cell from './demo/info/Cell'
+import Tag from './demo/info/Tag'
 
 // doc列表
 import docIcon from './demo/doc/Icon'
@@ -21,6 +24,9 @@ import docSwipe from './demo/doc/Swipe'
 import docAlert from './demo/doc/Alert'
 import docPopup from './demo/doc/Popup'
 import docSpinner from './demo/doc/Spinner'
+import docNotice from './demo/doc/Noticle'
+import docCell from './demo/doc/Cell'
+import docTag from './demo/doc/Tag'
 
 export {
   Container,
@@ -34,6 +40,9 @@ export {
   Alert,
   Popup,
   Spinner,
+  Notice,
+  Cell,
+  Tag,
 
   docIcon,
   docScroll,
@@ -42,5 +51,8 @@ export {
   docSwipe,
   docAlert,
   docPopup,
-  docSpinner
+  docSpinner,
+  docNotice,
+  docCell,
+  docTag
 }

@@ -7,6 +7,9 @@ import Swipe from './Swipe'
 import Alert from './Alert'
 import Popup from './Popup'
 import Spinner from './Spinner'
+import Notice from './Notice'
+import Cell from './Cell'
+import Tag from './Tag'
 
 export {
   Bubble,
@@ -17,5 +20,8 @@ export {
   Swipe,
   Alert,
   Popup,
-  Spinner
+  Spinner,
+  Notice,
+  Cell,
+  Tag
 }

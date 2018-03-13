@@ -12,13 +12,20 @@ import {
   Scroll,
   Button,
   Swipe,
-  Popup
+  Popup,
+  Notice,
+  Cell,
+  Tag,
 } from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
 Vue.use(Button)
 Vue.use(Swipe)
 Vue.use(Popup)
+Vue.use(Notice)
+Vue.use(Cell)
+Vue.use(Cell.Item)
+Vue.use(Tag)
 
 
 /* eslint-disable no-new */

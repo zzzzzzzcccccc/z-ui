@@ -1,0 +1,320 @@
+
+@-webkit-keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.z-fade-enter-active,
+.z-fade-leave-active {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.z-fade-enter,
+.z-fade-leave-active {
+  opacity: 0;
+}
+@-webkit-keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+@keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+.z-icon-loading {
+  -webkit-animation: global-rotate 1.2s infinite linear;
+          animation: global-rotate 1.2s infinite linear;
+}
+
+@-webkit-keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes global-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.z-fade-enter-active,
+.z-fade-leave-active {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.z-fade-enter,
+.z-fade-leave-active {
+  opacity: 0;
+}
+@-webkit-keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes global-fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes global-fadeOut {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+@keyframes global-scale {
+0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+30% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
+100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+}
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+.z-notice-container {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 10px;
+}
+.z-notice-main {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 12px;
+  height: 16px;
+}
+.z-notice-main-info {
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+.z-notice-animate-play {
+  -webkit-animation: global-notice-animate-play linear both;
+          animation: global-notice-animate-play linear both;
+}
+/* 这里不换一个循环动画的className会造成第2次动画继续第一个的bug */
+.z-notice-animate-infinite {
+  -webkit-animation: global-notice-animate-infinite linear infinite both;
+          animation: global-notice-animate-infinite linear infinite both;
+}
+.z-notice-left-wrapper {
+  font-size: 16px;
+  padding-right: 4px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.z-notice-right-wrapper {
+  font-size: 16px;
+  padding-left: 4px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

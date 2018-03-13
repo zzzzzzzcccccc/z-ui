@@ -96,6 +96,31 @@
             transform: scale(1);
 }
 }
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
 .z-alert-enter-active {
   -webkit-animation: global-fadeIn 0.4s;
           animation: global-fadeIn 0.4s;
@@ -106,7 +131,7 @@
 }
 .z-alert-container {
   width: 80%;
-  background-color: #ffff;
+  background-color: #fff;
   overflow: hidden;
   position: fixed;
   z-index: 3000;
@@ -269,6 +294,31 @@
 100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+}
+}
+/* notice动画 */
+@-webkit-keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-play {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@-webkit-keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+}
+}
+@keyframes global-notice-animate-infinite {
+to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
 }
 }
 .z-icon-loading {

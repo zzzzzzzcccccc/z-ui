@@ -21,6 +21,8 @@
   import arrowRight from '../views/arrow-right'
   import lineArrowRight from '../views/line-arrow-right'
   import edit from '../views/edit'
+  import notice from '../views/notice'
+  import search from '../views/search'
 
   export default {
     name: 'zIcon',
@@ -48,7 +50,9 @@
       start,
       arrowRight,
       lineArrowRight,
-      edit
+      edit,
+      notice,
+      search
     }
   }
 </script>

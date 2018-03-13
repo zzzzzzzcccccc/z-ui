@@ -16,7 +16,7 @@
       &lt;z-button type="primary" val="small"  size="small"&gt;&lt;/z-button&gt;<br/>
       &lt;z-button type="primary" val="mini"  size="mini"&gt;&lt;/z-button&gt;<br/>
       &lt;z-button type="primary" val="disabled"  disabled&gt;&lt;/z-button&gt;<br/>
-      &lt;z-button type="primary" val="primary"  loading disabled&gt;&lt;/z-button&gt;
+      &lt;z-button type="primary" val="primary"  loading&gt;&lt;/z-button&gt;
     </code>
   </div>
 </template>
