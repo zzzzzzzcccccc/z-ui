@@ -38,8 +38,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {path: '/', component: Container},
-
     {path: '/list', component: List},
+
     {path: '/icon', component: Icon},
     {path: '/toast', component: Toast},
     {path: '/button', component: Button},

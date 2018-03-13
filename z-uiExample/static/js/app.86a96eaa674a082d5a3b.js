@@ -15507,14 +15507,26 @@ var Container_Component = Container_normalizeComponent(
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ var List = ({
-  data: function data() {
-    return {};
+  computed: {
+    list: function list() {
+      return config_srcList;
+    }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-1b856fa4","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/List.vue
-var List_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrapper"},[_vm._v("\n  demo\n")])}
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-7771a238","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/List.vue
+var List_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrapper"},[_c('z-scroll',{staticStyle:{"width":"100vw","height":"100vh"}},[_c('ul',{attrs:{"slot":"list"},slot:"list"},_vm._l((_vm.list),function(item,index){return _c('router-link',{key:index,attrs:{"tag":"li","to":("/" + (item.path))}},[_c('z-cell',[_c('z-cell-item',{attrs:{"title":item.label}})],1)],1)}))])],1)}
 var List_staticRenderFns = []
 var List_esExports = { render: List_render, staticRenderFns: List_staticRenderFns }
 /* harmony default export */ var demo_List = (List_esExports);
@@ -22848,8 +22860,8 @@ vue_esm["a" /* default */].use(vue_router_esm)
 /* harmony default export */ var router = (new vue_router_esm({
   routes: [
     {path: '/', component: example_views_Container},
-
     {path: '/list', component: views_demo_List},
+
     {path: '/icon', component: demo_info_Icon},
     {path: '/toast', component: views_demo_info_Toast},
     {path: '/button', component: demo_info_Button},
