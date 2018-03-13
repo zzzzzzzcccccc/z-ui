@@ -1100,8 +1100,18 @@ to {
 .z-cell-active {
   cursor: pointer;
 }
-.z-cell-active:active {
-  background: rgba(0, 0, 0, 0.16);
+.z-cell-active:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+}
+.z-cell-active:active:before {
+  opacity: 0.2;
 }
 .z-cell-disabled {
   pointer-events: none;
