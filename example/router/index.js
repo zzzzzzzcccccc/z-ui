@@ -15,6 +15,8 @@ import {
   Notice,
   Cell,
   Tag,
+  TabBar,
+  Collapse,
 
   docIcon,
   docScroll,
@@ -27,6 +29,8 @@ import {
   docNotice,
   docCell,
   docTag,
+  docTabBar,
+  docCollapse,
 } from '../views'
 
 Vue.use(Router)
@@ -47,6 +51,8 @@ export default new Router({
     {path: '/notice', component: Notice},
     {path: '/cell', component: Cell},
     {path: '/tag', component: Tag},
+    {path: '/tabbar', component: TabBar},
+    {path: '/collapse', component: Collapse},
 
     {path: '/doc-icon', component: docIcon},
     {path: '/doc-toast', component: docToast},
@@ -58,6 +64,8 @@ export default new Router({
     {path: '/doc-spinner', component: docSpinner},
     {path: '/doc-notice', component: docNotice},
     {path: '/doc-cell', component: docCell},
-    {path: '/doc-tag', component: docTag}
+    {path: '/doc-tag', component: docTag},
+    {path: '/doc-tabbar', component: docTabBar},
+    {path: '/doc-collapse', component: docCollapse}
   ]
 })

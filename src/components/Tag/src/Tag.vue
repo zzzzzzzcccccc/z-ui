@@ -13,7 +13,18 @@
 
 <script>
   import Icon from '../../Icon'
-
+  /*
+  * @params type String 样式类型
+  * @params val String 标签内容
+  * @params size String 尺寸
+  * @params iconName String 目前紧支持icon组件内的name
+  * @params disabled Boolean 是否禁用
+  * @params plain Boolean 是否镂空
+  * @params round Boolean 是否显示圆角
+  * @params isLink Boolean 是否可以被点击
+  * @slot icon 标签
+  * @slot val 标签
+  * */
   export default {
     name: 'zTag',
     components: {
@@ -55,7 +66,9 @@
     },
     methods: {
       bindClick (e) {
-        this.$emit('click', e)
+        if (this.isLink) {
+          this.$emit('click', e)
+        }
       }
     }
   }

@@ -9,7 +9,9 @@ export const srcList = [
   {path: 'spinner', label: '加载'},
   {path: 'notice', label: '公告'},
   {path: 'cell', label: '单元格'},
-  {path: 'tag', label: 'tag标签'}
+  {path: 'tag', label: 'tag标签'},
+  {path: 'tabbar', label: 'tabbar导航'},
+  {path: 'collapse', label: '折叠窗'}
 ]
 
 export const deviceTypeMap = {

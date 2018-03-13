@@ -1,0 +1,56 @@
+@import "../utils/const.less";
+
+.z-tab-bar-item-container{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.z-tab-bar-active{
+  color: @primaryColor;
+}
+
+.z-tab-bar-item-icon-wrapper{
+  position: relative;
+}
+.z-tab-bar-item-icon-point:after{
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: @dangerColor;
+  position: absolute;
+  border-radius: 50%;
+  right: -8px;
+  top: 4px;
+  z-index: 10;
+}
+.z-tab-bar-item-info{
+  position: absolute;
+  display: inline-block;
+  font-size: @miniFontSize;
+  left: 50%;
+  padding: 0 0.4em;
+  text-align: center;
+  min-width: 1.2em;
+  margin-left: 0.6em;
+  background-color: @dangerColor;
+  color: #fff;
+  border-radius: 0.6em;
+  top: 0.2em;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+.z-tab-bar-item-label-info,
+.z-tab-bar-icon-info{
+  font-size: @normalFontSize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

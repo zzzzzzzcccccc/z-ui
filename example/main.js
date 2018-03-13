@@ -16,6 +16,8 @@ import {
   Notice,
   Cell,
   Tag,
+  TabBar,
+  Collapse,
 } from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
@@ -26,6 +28,10 @@ Vue.use(Notice)
 Vue.use(Cell)
 Vue.use(Cell.Item)
 Vue.use(Tag)
+Vue.use(TabBar)
+Vue.use(TabBar.Item)
+Vue.use(Collapse)
+Vue.use(Collapse.Item)
 
 
 /* eslint-disable no-new */

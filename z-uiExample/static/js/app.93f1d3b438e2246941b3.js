@@ -426,6 +426,13 @@ module.exports = function (exec) {
 
 /***/ }),
 
+/***/ "IzUM":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "J2MG":
 /***/ (function(module, exports) {
 
@@ -705,6 +712,13 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
+
+/***/ }),
+
+/***/ "KRaL":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -11973,6 +11987,13 @@ module.exports = function (bitmap, value) {
 
 /***/ }),
 
+/***/ "USui":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "Usa3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12050,6 +12071,13 @@ var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) 
 exports.BREAK = BREAK;
 exports.RETURN = RETURN;
 
+
+/***/ }),
+
+/***/ "Xdkq":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -12491,6 +12519,13 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__("Jfpx")(func
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__("hcud"), __esModule: true };
+
+/***/ }),
+
+/***/ "beey":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -15362,7 +15397,9 @@ const config_srcList = [
   {path: 'spinner', label: '加载'},
   {path: 'notice', label: '公告'},
   {path: 'cell', label: '单元格'},
-  {path: 'tag', label: 'tag标签'}
+  {path: 'tag', label: 'tag标签'},
+  {path: 'tabbar', label: 'tabbar导航'},
+  {path: 'collapse', label: '折叠窗'}
 ]
 
 const config_deviceTypeMap = {
@@ -20970,7 +21007,18 @@ Cell_src_Cell.Item = Cell_src_Cell_item
 //
 
 
-
+/*
+* @params type String 样式类型
+* @params val String 标签内容
+* @params size String 尺寸
+* @params iconName String 目前紧支持icon组件内的name
+* @params disabled Boolean 是否禁用
+* @params plain Boolean 是否镂空
+* @params round Boolean 是否显示圆角
+* @params isLink Boolean 是否可以被点击
+* @slot icon 标签
+* @slot val 标签
+* */
 /* harmony default export */ var Tag = ({
   name: 'zTag',
   components: {
@@ -21012,18 +21060,20 @@ Cell_src_Cell.Item = Cell_src_Cell_item
   },
   methods: {
     bindClick: function bindClick(e) {
-      this.$emit('click', e);
+      if (this.isLink) {
+        this.$emit('click', e);
+      }
     }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-39e9ee7d","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tag/src/Tag.vue
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-75a2c80e","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tag/src/Tag.vue
 var Tag_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"z-tag-container",class:[("z-tag-" + _vm.type), ("z-tag-" + _vm.size), { 'z-tag-disabled': _vm.disabled, 'z-tag-round': _vm.round, 'z-tag-link':_vm.isLink }, _vm.plain ? ("z-tag-" + _vm.type + "-plain") : ''],on:{"click":_vm.bindClick}},[_c('span',{staticClass:"z-tag-wrapper"},[(_vm.iconName || _vm.$slots.icon)?_vm._t("icon",[_c('icon',{staticClass:"z-tag-icon",attrs:{"name":_vm.iconName}})]):_vm._e(),_vm._v(" "),(_vm.val || _vm.$slots.val)?_vm._t("val",[_vm._v(_vm._s(_vm.val))]):_vm._e()],2)])}
 var Tag_staticRenderFns = []
 var Tag_esExports = { render: Tag_render, staticRenderFns: Tag_staticRenderFns }
 /* harmony default export */ var src_Tag = (Tag_esExports);
 // CONCATENATED MODULE: ../src/components/Tag/src/Tag.vue
 function Tag_injectStyle (ssrContext) {
-  __webpack_require__("zlpk")
+  __webpack_require__("KRaL")
 }
 var Tag_normalizeComponent = __webpack_require__("AYo0")
 /* script */
@@ -21059,7 +21109,506 @@ Tag_src_Tag.install = (Vue) => {
 
 /* harmony default export */ var components_Tag = (Tag_src_Tag);
 
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Tabbar/src/Tabbar.vue
+//
+//
+//
+//
+//
+//
+
+
+/*
+* @params backgroundColor 背景色 默认白色
+* @params bottom 距离底部 默认0
+* @params v-model 当前索引
+* */
+/* harmony default export */ var Tabbar = ({
+  name: 'zTabBar',
+  props: {
+    backgroundColor: {
+      type: String,
+      default: '#fff'
+    },
+    bottom: {
+      type: [String, Number],
+      default: '0px'
+    },
+    value: Number
+  },
+  data: function data() {
+    return {
+      item: []
+    };
+  },
+
+  methods: {
+    getActiveItem: function getActiveItem() {
+      var _this = this;
+
+      this.item.forEach(function (item, index) {
+        item.active = index === _this.value;
+      });
+    },
+    onChange: function onChange(active) {
+      this.$emit('input', active);
+      this.$emit('change', active);
+    }
+  },
+  watch: {
+    item: function item() {
+      this.getActiveItem();
+    },
+    value: function value() {
+      this.getActiveItem();
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-39bcd5e3","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tabbar/src/Tabbar.vue
+var Tabbar_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-tab-bar-container",style:({ backgroundColor: _vm.backgroundColor, bottom: _vm.bottom })},[_vm._t("default")],2)}
+var Tabbar_staticRenderFns = []
+var Tabbar_esExports = { render: Tabbar_render, staticRenderFns: Tabbar_staticRenderFns }
+/* harmony default export */ var src_Tabbar = (Tabbar_esExports);
+// CONCATENATED MODULE: ../src/components/Tabbar/src/Tabbar.vue
+function Tabbar_injectStyle (ssrContext) {
+  __webpack_require__("USui")
+}
+var Tabbar_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Tabbar___vue_template_functional__ = false
+/* styles */
+var Tabbar___vue_styles__ = Tabbar_injectStyle
+/* scopeId */
+var Tabbar___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Tabbar___vue_module_identifier__ = null
+var Tabbar_Component = Tabbar_normalizeComponent(
+  Tabbar,
+  src_Tabbar,
+  Tabbar___vue_template_functional__,
+  Tabbar___vue_styles__,
+  Tabbar___vue_scopeId__,
+  Tabbar___vue_module_identifier__
+)
+
+/* harmony default export */ var Tabbar_src_Tabbar = (Tabbar_Component.exports);
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Tabbar/src/Tabbar-item.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/*
+* @params label String 文案
+* @params iconName String 基于icon组件name
+* @params height Number/String tabbar 高度 默认42px
+* @params point Boolean 是否显示右上角红点
+* @params info Number/String 右上角显示文案
+* @slot icon icon标签
+* @slot label 文案标签
+* */
+/* harmony default export */ var Tabbar_item = ({
+  name: 'zTabBarItem',
+  components: {
+    Icon: components_Icon
+  },
+  props: {
+    label: {
+      type: [String, Number],
+      default: ''
+    },
+    iconName: {
+      type: String,
+      default: ''
+    },
+    height: {
+      type: [String, Number],
+      default: '42px'
+    },
+    point: {
+      type: Boolean,
+      default: false
+    },
+    info: {
+      type: [String, Number],
+      default: ''
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  beforeCreate: function beforeCreate() {
+    this.$parent.item.push(this);
+  },
+  destroyed: function destroyed() {
+    this.$parent.item.splice(this.$parent.item.indexOf(this), 1);
+  },
+
+  methods: {
+    bindClick: function bindClick(e) {
+      this.$parent.onChange(this.$parent.item.indexOf(this));
+      this.$emit('click', e);
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-9362eade","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tabbar/src/Tabbar-item.vue
+var Tabbar_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-tab-bar-item-container",class:[ {'z-tab-bar-active': _vm.active} ],style:({ height: _vm.height }),on:{"click":_vm.bindClick}},[(_vm.iconName || _vm.$slots.icon)?_c('div',{staticClass:"z-tab-bar-item-icon-wrapper",class:[{'z-tab-bar-item-icon-point': _vm.point}]},[_vm._t("icon",[_c('icon',{staticClass:"z-tab-bar-icon-info",attrs:{"name":_vm.iconName}})]),_vm._v(" "),(_vm.info)?_c('em',{staticClass:"z-tab-bar-item-info"},[_vm._v(_vm._s(typeof _vm.info === 'number' ? (_vm.info >= 99 ? '99+' : _vm.info) : _vm.info))]):_vm._e()],2):_vm._e(),_vm._v(" "),(_vm.label || _vm.$slots.label)?_c('div',{staticClass:"z-tab-bar-item-label-wrapper"},[_vm._t("label",[_c('span',{staticClass:"z-tab-bar-item-label-info"},[_vm._v(_vm._s(_vm.label))])])],2):_vm._e()])}
+var Tabbar_item_staticRenderFns = []
+var Tabbar_item_esExports = { render: Tabbar_item_render, staticRenderFns: Tabbar_item_staticRenderFns }
+/* harmony default export */ var src_Tabbar_item = (Tabbar_item_esExports);
+// CONCATENATED MODULE: ../src/components/Tabbar/src/Tabbar-item.vue
+function Tabbar_item_injectStyle (ssrContext) {
+  __webpack_require__("Xdkq")
+}
+var Tabbar_item_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Tabbar_item___vue_template_functional__ = false
+/* styles */
+var Tabbar_item___vue_styles__ = Tabbar_item_injectStyle
+/* scopeId */
+var Tabbar_item___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Tabbar_item___vue_module_identifier__ = null
+var Tabbar_item_Component = Tabbar_item_normalizeComponent(
+  Tabbar_item,
+  src_Tabbar_item,
+  Tabbar_item___vue_template_functional__,
+  Tabbar_item___vue_styles__,
+  Tabbar_item___vue_scopeId__,
+  Tabbar_item___vue_module_identifier__
+)
+
+/* harmony default export */ var Tabbar_src_Tabbar_item = (Tabbar_item_Component.exports);
+
+// CONCATENATED MODULE: ../src/components/Tabbar/index.js
+
+
+
+Tabbar_src_Tabbar.install = (Vue) => {
+  Vue.component(Tabbar_src_Tabbar.name, Tabbar_src_Tabbar)
+  Vue.component(Tabbar_src_Tabbar_item.name, Tabbar_src_Tabbar_item)
+}
+
+Tabbar_src_Tabbar.Item = Tabbar_src_Tabbar_item
+
+/* harmony default export */ var components_Tabbar = (Tabbar_src_Tabbar);
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Collapse/src/Collapse.vue
+//
+//
+//
+//
+//
+//
+
+/*
+* @params accordion Boolean 是否启用手风情模式
+* @params defaultIndex Array 设置默认展开
+* */
+/* harmony default export */ var Collapse = ({
+  name: 'zCollapse',
+  props: {
+    accordion: {
+      type: Boolean,
+      default: false
+    },
+    defaultIndex: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  data: function data() {
+    return {
+      item: []
+    };
+  },
+
+  methods: {
+    getActiveItem: function getActiveItem() {
+      var _this = this;
+
+      this.defaultIndex.forEach(function (index) {
+        _this.item[index].active = true;
+      });
+    }
+  },
+  watch: {
+    item: function item() {
+      this.getActiveItem();
+    },
+    defaultIndex: function defaultIndex() {
+      this.getActiveItem();
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-dcf5a94e","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Collapse/src/Collapse.vue
+var Collapse_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-collapse-container"},[_vm._t("default")],2)}
+var Collapse_staticRenderFns = []
+var Collapse_esExports = { render: Collapse_render, staticRenderFns: Collapse_staticRenderFns }
+/* harmony default export */ var src_Collapse = (Collapse_esExports);
+// CONCATENATED MODULE: ../src/components/Collapse/src/Collapse.vue
+function Collapse_injectStyle (ssrContext) {
+  __webpack_require__("IzUM")
+}
+var Collapse_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Collapse___vue_template_functional__ = false
+/* styles */
+var Collapse___vue_styles__ = Collapse_injectStyle
+/* scopeId */
+var Collapse___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Collapse___vue_module_identifier__ = null
+var Collapse_Component = Collapse_normalizeComponent(
+  Collapse,
+  src_Collapse,
+  Collapse___vue_template_functional__,
+  Collapse___vue_styles__,
+  Collapse___vue_scopeId__,
+  Collapse___vue_module_identifier__
+)
+
+/* harmony default export */ var Collapse_src_Collapse = (Collapse_Component.exports);
+
+// CONCATENATED MODULE: ../src/utils/CollapseTransition.js
+const elTransition = '0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out'
+const Transition = {
+  'before-enter' (el) {
+    el.style.transition = elTransition
+    if (!el.dataset) el.dataset = {}
+
+    el.dataset.oldPaddingTop = el.style.paddingTop
+    el.dataset.oldPaddingBottom = el.style.paddingBottom
+
+    el.style.height = 0
+    el.style.paddingTop = 0
+    el.style.paddingBottom = 0
+  },
+
+  'enter' (el) {
+    el.dataset.oldOverflow = el.style.overflow
+    if (el.scrollHeight !== 0) {
+      el.style.height = el.scrollHeight + 'px'
+      el.style.paddingTop = el.dataset.oldPaddingTop
+      el.style.paddingBottom = el.dataset.oldPaddingBottom
+    } else {
+      el.style.height = ''
+      el.style.paddingTop = el.dataset.oldPaddingTop
+      el.style.paddingBottom = el.dataset.oldPaddingBottom
+    }
+
+    el.style.overflow = 'hidden'
+  },
+
+  'after-enter' (el) {
+    el.style.transition = ''
+    el.style.height = ''
+    el.style.overflow = el.dataset.oldOverflow
+  },
+
+  'before-leave' (el) {
+    if (!el.dataset) el.dataset = {}
+    el.dataset.oldPaddingTop = el.style.paddingTop
+    el.dataset.oldPaddingBottom = el.style.paddingBottom
+    el.dataset.oldOverflow = el.style.overflow
+
+    el.style.height = el.scrollHeight + 'px'
+    el.style.overflow = 'hidden'
+  },
+
+  'leave' (el) {
+    if (el.scrollHeight !== 0) {
+      el.style.transition = elTransition
+      el.style.height = 0
+      el.style.paddingTop = 0
+      el.style.paddingBottom = 0
+    }
+  },
+
+  'after-leave' (el) {
+    el.style.transition = ''
+    el.style.height = ''
+    el.style.overflow = el.dataset.oldOverflow
+    el.style.paddingTop = el.dataset.oldPaddingTop
+    el.style.paddingBottom = el.dataset.oldPaddingBottom
+  }
+}
+
+/* harmony default export */ var CollapseTransition = ({
+  name: 'collapseTransition',
+  functional: true,
+  render (h, { children }) {
+    const data = {
+      on: Transition
+    }
+    return h('transition', data, children)
+  }
+});
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Collapse/src/Collapse-item.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/*
+* @params title String/Number 说明
+* @params disabled Boolean 是否被禁用
+* @slot header 若需要自定义标题
+* */
+/* harmony default export */ var Collapse_item = ({
+  name: 'zCollapseItem',
+  components: {
+    CollapseTransition: CollapseTransition,
+    Icon: components_Icon
+  },
+  props: {
+    title: {
+      type: [String, Number],
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  beforeCreate: function beforeCreate() {
+    this.$parent.item.push(this);
+  },
+  destroyed: function destroyed() {
+    this.$parent.item.splice(this.$parent.item.indexOf(this), 1);
+  },
+
+  methods: {
+    bindClick: function bindClick(e) {
+      var accordion = this.$parent.accordion;
+
+      if (accordion) this.setAccordion();else this.active ? this.active = false : this.active = true;
+
+      this.$emit('click', e);
+    },
+    setAccordion: function setAccordion() {
+      var item = this.$parent.item;
+
+      if (this.active) {
+        for (var i = 0; i < item.length; i++) {
+          item[i].active = false;
+        }
+      } else {
+        for (var _i = 0; _i < item.length; _i++) {
+          item[_i].active = false;
+        }
+        this.active = true;
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-68457d73","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Collapse/src/Collapse-item.vue
+var Collapse_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-collapse-item-container",class:[{'z-collapse-active': _vm.active}]},[_c('div',{staticClass:"z-collapse-item-header",class:[{'z-collapse-disabled': _vm.disabled}],on:{"click":_vm.bindClick}},[_vm._t("header",[_c('span',{staticClass:"z-collapse-header-info"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('icon',{staticClass:"z-collapse-header-icon",attrs:{"name":"arrowRight"}})])],2),_vm._v(" "),_c('collapse-transition',[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.active),expression:"active"}],staticClass:"z-collapse-item-content"},[_c('div',{staticClass:"z-collapse-item-content-main"},[_vm._t("default")],2)])])],1)}
+var Collapse_item_staticRenderFns = []
+var Collapse_item_esExports = { render: Collapse_item_render, staticRenderFns: Collapse_item_staticRenderFns }
+/* harmony default export */ var src_Collapse_item = (Collapse_item_esExports);
+// CONCATENATED MODULE: ../src/components/Collapse/src/Collapse-item.vue
+function Collapse_item_injectStyle (ssrContext) {
+  __webpack_require__("beey")
+}
+var Collapse_item_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Collapse_item___vue_template_functional__ = false
+/* styles */
+var Collapse_item___vue_styles__ = Collapse_item_injectStyle
+/* scopeId */
+var Collapse_item___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Collapse_item___vue_module_identifier__ = null
+var Collapse_item_Component = Collapse_item_normalizeComponent(
+  Collapse_item,
+  src_Collapse_item,
+  Collapse_item___vue_template_functional__,
+  Collapse_item___vue_styles__,
+  Collapse_item___vue_scopeId__,
+  Collapse_item___vue_module_identifier__
+)
+
+/* harmony default export */ var Collapse_src_Collapse_item = (Collapse_item_Component.exports);
+
+// CONCATENATED MODULE: ../src/components/Collapse/index.js
+
+
+
+Collapse_src_Collapse.install = (Vue) => {
+  Vue.component(Collapse_src_Collapse.name, Collapse_src_Collapse)
+  Vue.component(Collapse_src_Collapse_item.name, Collapse_src_Collapse_item)
+}
+
+Collapse_src_Collapse.Item = Collapse_src_Collapse_item
+
+/* harmony default export */ var components_Collapse = (Collapse_src_Collapse);
+
 // CONCATENATED MODULE: ../src/components/index.js
+
+
 
 
 
@@ -21715,6 +22264,144 @@ var info_Tag_Component = info_Tag_normalizeComponent(
 
 /* harmony default export */ var views_demo_info_Tag = (info_Tag_Component.exports);
 
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../example/views/demo/info/Tabbar.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var info_Tabbar = ({
+  data: function data() {
+    return {
+      index1: 2,
+      data1: [{ label: '标签', iconName: 'user' }, { label: '标签', iconName: 'user' }, { label: '标签' }, { iconName: 'user' }],
+      index2: 0,
+      data2: [{ label: '标签', iconName: 'alipay', point: true }, { label: '标签', iconName: 'weixin', info: 100 }]
+    };
+  },
+
+  methods: {
+    bindClick: function bindClick(e) {
+      console.log(e);
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-10cb020a","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/info/Tabbar.vue
+var info_Tabbar_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item",staticStyle:{"width":"100vw","height":"100vh","background-color":"#e5e5e5"}},[_c('z-tab-bar',{model:{value:(_vm.index1),callback:function ($$v) {_vm.index1=$$v},expression:"index1"}},_vm._l((_vm.data1),function(item,index){return _c('z-tab-bar-item',{key:index,attrs:{"label":item.label,"iconName":item.iconName}})})),_vm._v(" "),_c('z-tab-bar',{attrs:{"bottom":"100px"},model:{value:(_vm.index2),callback:function ($$v) {_vm.index2=$$v},expression:"index2"}},_vm._l((_vm.data2),function(item,index){return _c('z-tab-bar-item',{key:index,attrs:{"label":item.label,"iconName":item.iconName,"point":item.point,"info":item.info},on:{"click":_vm.bindClick}})}))],1)}
+var info_Tabbar_staticRenderFns = []
+var info_Tabbar_esExports = { render: info_Tabbar_render, staticRenderFns: info_Tabbar_staticRenderFns }
+/* harmony default export */ var demo_info_Tabbar = (info_Tabbar_esExports);
+// CONCATENATED MODULE: ../example/views/demo/info/Tabbar.vue
+var info_Tabbar_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var info_Tabbar___vue_template_functional__ = false
+/* styles */
+var info_Tabbar___vue_styles__ = null
+/* scopeId */
+var info_Tabbar___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var info_Tabbar___vue_module_identifier__ = null
+var info_Tabbar_Component = info_Tabbar_normalizeComponent(
+  info_Tabbar,
+  demo_info_Tabbar,
+  info_Tabbar___vue_template_functional__,
+  info_Tabbar___vue_styles__,
+  info_Tabbar___vue_scopeId__,
+  info_Tabbar___vue_module_identifier__
+)
+
+/* harmony default export */ var views_demo_info_Tabbar = (info_Tabbar_Component.exports);
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../example/views/demo/info/Collapse.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var info_Collapse = ({
+  methods: {
+    clickItem: function clickItem(e) {}
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-2a42ce3c","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/info/Collapse.vue
+var info_Collapse_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("默认")]),_vm._v(" "),_c('div',{staticStyle:{"padding":"10px 0"}},[_c('z-collapse',{attrs:{"defaultIndex":[0]}},[_c('z-collapse-item',{attrs:{"title":"标题a"},on:{"click":_vm.clickItem}},[_vm._v("\n        哈哈哈哈1\n      ")]),_vm._v(" "),_c('z-collapse-item',{attrs:{"title":"标题b"}},[_vm._v("\n        哈哈哈哈2\n      ")]),_vm._v(" "),_c('z-collapse-item',{attrs:{"title":"标题c"}},[_vm._v("\n        哈哈哈哈3\n      ")])],1)],1),_vm._v(" "),_c('h3',[_vm._v("手风情模式")]),_vm._v(" "),_c('div',{staticStyle:{"padding":"10px 0"}},[_c('z-collapse',{attrs:{"defaultIndex":[1],"accordion":""}},[_c('z-collapse-item',{attrs:{"title":"被禁用","disabled":""}},[_vm._v("\n        哈哈哈哈1\n      ")]),_vm._v(" "),_c('z-collapse-item',{attrs:{"title":"标题b"}},[_vm._v("\n        哈哈哈哈2\n      ")]),_vm._v(" "),_c('z-collapse-item',{attrs:{"title":"标题c"}},[_vm._v("\n        哈哈哈哈3\n      ")])],1)],1)])}
+var info_Collapse_staticRenderFns = []
+var info_Collapse_esExports = { render: info_Collapse_render, staticRenderFns: info_Collapse_staticRenderFns }
+/* harmony default export */ var demo_info_Collapse = (info_Collapse_esExports);
+// CONCATENATED MODULE: ../example/views/demo/info/Collapse.vue
+var info_Collapse_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var info_Collapse___vue_template_functional__ = false
+/* styles */
+var info_Collapse___vue_styles__ = null
+/* scopeId */
+var info_Collapse___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var info_Collapse___vue_module_identifier__ = null
+var info_Collapse_Component = info_Collapse_normalizeComponent(
+  info_Collapse,
+  demo_info_Collapse,
+  info_Collapse___vue_template_functional__,
+  info_Collapse___vue_styles__,
+  info_Collapse___vue_scopeId__,
+  info_Collapse___vue_module_identifier__
+)
+
+/* harmony default export */ var views_demo_info_Collapse = (info_Collapse_Component.exports);
+
 // CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-db1c6736","hasScoped":true,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Icon.vue
 var doc_Icon_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
 var doc_Icon_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("使用方法")]),_vm._v(" "),_c('code',[_vm._v("<z-icon name=\"loading\" />")])])}]
@@ -22024,9 +22711,9 @@ var doc_Cell_Component = doc_Cell_normalizeComponent(
 
 /* harmony default export */ var demo_doc_Cell = (doc_Cell_Component.exports);
 
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-514b6935","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Tag.vue
-var doc_Tag_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_vm._v("tag doc")])}
-var doc_Tag_staticRenderFns = []
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-2dcd26b5","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Tag.vue
+var doc_Tag_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+var doc_Tag_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("配置参数说明")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params type String 样式类型\n        * @params val String 标签内容\n        * @params size String 尺寸\n        * @params iconName String 目前紧支持icon组件内的name\n        * @params disabled Boolean 是否禁用\n        * @params plain Boolean 是否镂空\n        * @params round Boolean 是否显示圆角\n        * @params isLink Boolean 是否可以被点击\n        * @slot icon 标签\n        * @slot val 标签\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("基础使用")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-tag val=\"mini\" size=\"mini\"></z-tag>\n      <z-tag val=\"small\" size=\"small\"></z-tag>\n      <z-tag val=\"normal\"></z-tag>\n      <z-tag val=\"large\" size=\"large\"></z-tag>\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("样式")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-tag val=\"info\" plain></z-tag>\n      <z-tag val=\"primary\" type=\"primary\" plain></z-tag>\n      <z-tag val=\"warning\" type=\"warning\" plain></z-tag>\n      <z-tag val=\"danger\" type=\"danger\" plain></z-tag>\n      <z-tag val=\"success\" type=\"success\" plain></z-tag>\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("Icon")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-tag val=\"icon\" type=\"success\" iconName=\"success\"></z-tag>\n      <z-tag type=\"success\" iconName=\"weixin\" size=\"large\"></z-tag>\n    ")]),_vm._v("\n  ")])])}]
 var doc_Tag_esExports = { render: doc_Tag_render, staticRenderFns: doc_Tag_staticRenderFns }
 /* harmony default export */ var doc_Tag = (doc_Tag_esExports);
 // CONCATENATED MODULE: ../example/views/demo/doc/Tag.vue
@@ -22054,6 +22741,66 @@ var doc_Tag_Component = doc_Tag_normalizeComponent(
 
 /* harmony default export */ var demo_doc_Tag = (doc_Tag_Component.exports);
 
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-4fc7bc2c","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Tabbar.vue
+var doc_Tabbar_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+var doc_Tabbar_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("tab-bar配置参数说明")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params backgroundColor 背景色 默认白色\n        * @params bottom 距离底部 默认0\n        * @params v-model 当前索引\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("tab-bar-item配置参数说明")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params label String 文案\n        * @params iconName String 基于icon组件name\n        * @params height Number/String tabbar 高度 默认42px\n        * @params point Boolean 是否显示右上角红点\n        * @params info Number/String 右上角显示文案\n        * @slot icon icon标签\n        * @slot label 文案标签\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("基础使用方法")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n       <z-tab-bar v-model=\"index1\">\n          <z-tab-bar-item v-for=\"(item, index) in data1\" :key=\"index\" :label=\"item.label\" :iconName=\"item.iconName\">\n          </z-tab-bar-item>\n       </z-tab-bar>\n\n      index1: 2,\n      data1: [\n        {label: '标签', iconName: 'user'},\n        {label: '标签', iconName: 'user'},\n        {label: '标签'},\n        {iconName: 'user'}\n      ]\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("高级用法")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n       <z-tab-bar v-model=\"index2\" bottom=\"100px\">\n          <z-tab-bar-item v-for=\"(item, index) in data2\" :key=\"index\"\n                          :label=\"item.label\"\n                          :iconName=\"item.iconName\"\n                          :point=\"item.point\"\n                          :info=\"item.info\" @click=\"bindClick\">\n          </z-tab-bar-item>\n       </z-tab-bar>\n\n      index2: 0,\n      data2: [\n        {label: '标签', iconName: 'alipay', point: true},\n        {label: '标签', iconName: 'weixin', info: 100}\n      ]\n    ")]),_vm._v("\n  ")])])}]
+var doc_Tabbar_esExports = { render: doc_Tabbar_render, staticRenderFns: doc_Tabbar_staticRenderFns }
+/* harmony default export */ var doc_Tabbar = (doc_Tabbar_esExports);
+// CONCATENATED MODULE: ../example/views/demo/doc/Tabbar.vue
+var doc_Tabbar_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+var Tabbar___vue_script__ = null
+/* template */
+
+/* template functional */
+var doc_Tabbar___vue_template_functional__ = false
+/* styles */
+var doc_Tabbar___vue_styles__ = null
+/* scopeId */
+var doc_Tabbar___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var doc_Tabbar___vue_module_identifier__ = null
+var doc_Tabbar_Component = doc_Tabbar_normalizeComponent(
+  Tabbar___vue_script__,
+  doc_Tabbar,
+  doc_Tabbar___vue_template_functional__,
+  doc_Tabbar___vue_styles__,
+  doc_Tabbar___vue_scopeId__,
+  doc_Tabbar___vue_module_identifier__
+)
+
+/* harmony default export */ var demo_doc_Tabbar = (doc_Tabbar_Component.exports);
+
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-6ae8baf9","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Collapse.vue
+var doc_Collapse_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
+var doc_Collapse_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("coll-apse配置参数")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      * @params accordion Boolean 是否启用手风情模式\n      * @params defaultIndex Array 设置默认展开\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("coll-apse-item配置参数")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params title String/Number 说明\n        * @params disabled Boolean 是否被禁用\n        * @slot header 若需要自定义标题\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("基础使用实例")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-collapse :defaultIndex=\"[0]\">\n        <z-collapse-item title=\"标题a\" @click=\"clickItem\">\n          哈哈哈哈1\n        </z-collapse-item>\n        <z-collapse-item title=\"标题b\">\n          哈哈哈哈2\n        </z-collapse-item>\n        <z-collapse-item title=\"标题c\">\n          哈哈哈哈3\n        </z-collapse-item>\n      </z-collapse>\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("手风情模式")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n       <z-collapse :defaultIndex=\"[1]\" accordion>\n          <z-collapse-item title=\"被禁用\" disabled>\n            哈哈哈哈1\n          </z-collapse-item>\n          <z-collapse-item title=\"标题b\">\n            哈哈哈哈2\n          </z-collapse-item>\n          <z-collapse-item title=\"标题c\">\n            哈哈哈哈3\n          </z-collapse-item>\n       </z-collapse>\n    ")]),_vm._v("\n  ")])])}]
+var doc_Collapse_esExports = { render: doc_Collapse_render, staticRenderFns: doc_Collapse_staticRenderFns }
+/* harmony default export */ var doc_Collapse = (doc_Collapse_esExports);
+// CONCATENATED MODULE: ../example/views/demo/doc/Collapse.vue
+var doc_Collapse_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+var Collapse___vue_script__ = null
+/* template */
+
+/* template functional */
+var doc_Collapse___vue_template_functional__ = false
+/* styles */
+var doc_Collapse___vue_styles__ = null
+/* scopeId */
+var doc_Collapse___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var doc_Collapse___vue_module_identifier__ = null
+var doc_Collapse_Component = doc_Collapse_normalizeComponent(
+  Collapse___vue_script__,
+  doc_Collapse,
+  doc_Collapse___vue_template_functional__,
+  doc_Collapse___vue_styles__,
+  doc_Collapse___vue_scopeId__,
+  doc_Collapse___vue_module_identifier__
+)
+
+/* harmony default export */ var demo_doc_Collapse = (doc_Collapse_Component.exports);
+
 // CONCATENATED MODULE: ../example/views/index.js
 // doc
 
@@ -22072,7 +22819,11 @@ var doc_Tag_Component = doc_Tag_normalizeComponent(
 
 
 
+
+
 // doc列表
+
+
 
 
 
@@ -22110,6 +22861,8 @@ vue_esm["a" /* default */].use(vue_router_esm)
     {path: '/notice', component: demo_info_Notice},
     {path: '/cell', component: views_demo_info_Cell},
     {path: '/tag', component: views_demo_info_Tag},
+    {path: '/tabbar', component: views_demo_info_Tabbar},
+    {path: '/collapse', component: views_demo_info_Collapse},
 
     {path: '/doc-icon', component: demo_doc_Icon},
     {path: '/doc-toast', component: demo_doc_Toast},
@@ -22121,7 +22874,9 @@ vue_esm["a" /* default */].use(vue_router_esm)
     {path: '/doc-spinner', component: demo_doc_Spinner},
     {path: '/doc-notice', component: doc_Noticle},
     {path: '/doc-cell', component: demo_doc_Cell},
-    {path: '/doc-tag', component: demo_doc_Tag}
+    {path: '/doc-tag', component: demo_doc_Tag},
+    {path: '/doc-tabbar', component: demo_doc_Tabbar},
+    {path: '/doc-collapse', component: demo_doc_Collapse}
   ]
 }));
 
@@ -22149,6 +22904,10 @@ vue_esm["a" /* default */].use(components_Notice)
 vue_esm["a" /* default */].use(components_Cell)
 vue_esm["a" /* default */].use(components_Cell.Item)
 vue_esm["a" /* default */].use(components_Tag)
+vue_esm["a" /* default */].use(components_Tabbar)
+vue_esm["a" /* default */].use(components_Tabbar.Item)
+vue_esm["a" /* default */].use(components_Collapse)
+vue_esm["a" /* default */].use(components_Collapse.Item)
 
 
 /* eslint-disable no-new */
@@ -22917,13 +23676,6 @@ module.exports = function (O, D) {
   return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
 };
 
-
-/***/ }),
-
-/***/ "zlpk":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 

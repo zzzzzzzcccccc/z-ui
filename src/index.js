@@ -10,7 +10,9 @@ import {
   Spinner,
   Notice,
   Cell,
-  Tag
+  Tag,
+  TabBar,
+  Collapse
 } from './components'
 
 const components = [
@@ -22,7 +24,9 @@ const components = [
   Popup,
   Notice,
   Cell,
-  Tag
+  Tag,
+  TabBar,
+  Collapse
 ]
 
 const install = (Vue, opts={}) => {

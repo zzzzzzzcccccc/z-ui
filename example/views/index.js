@@ -14,6 +14,8 @@ import Spinner from './demo/info/Spinner'
 import Notice from './demo/info/Notice'
 import Cell from './demo/info/Cell'
 import Tag from './demo/info/Tag'
+import TabBar from './demo/info/Tabbar'
+import Collapse from './demo/info/Collapse'
 
 // doc列表
 import docIcon from './demo/doc/Icon'
@@ -27,6 +29,8 @@ import docSpinner from './demo/doc/Spinner'
 import docNotice from './demo/doc/Noticle'
 import docCell from './demo/doc/Cell'
 import docTag from './demo/doc/Tag'
+import docTabBar from './demo/doc/Tabbar'
+import docCollapse from './demo/doc/Collapse'
 
 export {
   Container,
@@ -43,6 +47,8 @@ export {
   Notice,
   Cell,
   Tag,
+  TabBar,
+  Collapse,
 
   docIcon,
   docScroll,
@@ -54,5 +60,7 @@ export {
   docSpinner,
   docNotice,
   docCell,
-  docTag
+  docTag,
+  docTabBar,
+  docCollapse,
 }

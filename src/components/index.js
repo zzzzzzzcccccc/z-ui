@@ -10,6 +10,8 @@ import Spinner from './Spinner'
 import Notice from './Notice'
 import Cell from './Cell'
 import Tag from './Tag'
+import TabBar from './Tabbar'
+import Collapse from './Collapse'
 
 export {
   Bubble,
@@ -23,5 +25,7 @@ export {
   Spinner,
   Notice,
   Cell,
-  Tag
+  Tag,
+  TabBar,
+  Collapse
 }
