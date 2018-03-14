@@ -7,7 +7,6 @@
           * @params label String 右侧内容
           * @params iconName String 对应icon组件name
           * @params message String 标题下面的描述
-          * @params isLink Boolean 是否可以点击
           * @params disabled Boolean 是否禁用
           * @slot leftIcon 左侧icon 标签
           * @slot name 左侧标题 标签

@@ -42,7 +42,7 @@
       },
       height: {
         type: [String, Number],
-        default: '42px'
+        default: '46px'
       },
       point: {
         type: Boolean,

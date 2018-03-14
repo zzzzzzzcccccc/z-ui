@@ -136,12 +136,11 @@ to {
 .z-collapse-container:after {
   content: '';
   position: absolute;
-  display: inline-block;
-  height: 1px;
-  top: 0;
   width: 100%;
-  background-color: #e5e5e5;
-  overflow: hidden;
+  display: block;
+  border-top: 1px solid #e5e5e5;
+  top: 0;
+  left: 0;
 }
 
 .z-collapse-item-container {
@@ -153,11 +152,10 @@ to {
 .z-collapse-item-container:before {
   content: '';
   position: absolute;
+  width: 100%;
   left: 0;
   bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 .z-collapse-item-header {
   width: 100%;

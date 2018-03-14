@@ -412,6 +412,13 @@ module.exports = function (fn, that, length) {
 
 /***/ }),
 
+/***/ "HggN":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "IvmU":
 /***/ (function(module, exports) {
 
@@ -1090,13 +1097,6 @@ module.exports = function (it) {
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("NLzl"), __webpack_require__("KIG8")))
-
-/***/ }),
-
-/***/ "PuUm":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -12074,7 +12074,7 @@ exports.RETURN = RETURN;
 
 /***/ }),
 
-/***/ "Xdkq":
+/***/ "Y+IO":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -15511,10 +15511,6 @@ var Container_Component = Container_normalizeComponent(
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -15523,10 +15519,17 @@ var Container_Component = Container_normalizeComponent(
     list: function list() {
       return config_srcList;
     }
+  },
+  methods: {
+    link: function link(_ref) {
+      var path = _ref.path;
+
+      this.$router.push('/' + path);
+    }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-7771a238","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/List.vue
-var List_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrapper"},[_c('z-scroll',{staticStyle:{"width":"100vw","height":"100vh"}},[_c('ul',{attrs:{"slot":"list"},slot:"list"},_vm._l((_vm.list),function(item,index){return _c('router-link',{key:index,attrs:{"tag":"li","to":("/" + (item.path))}},[_c('z-cell',[_c('z-cell-item',{attrs:{"title":item.label}})],1)],1)}))])],1)}
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-7931d8a8","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/List.vue
+var List_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrapper"},[_c('z-scroll',{staticStyle:{"width":"100vw","height":"100vh"}},[_c('z-cell',{attrs:{"slot":"list"},slot:"list"},_vm._l((_vm.list),function(item,index){return _c('z-cell-item',{key:index,attrs:{"title":item.label},on:{"click":function($event){_vm.link(item)}}})}))],1)],1)}
 var List_staticRenderFns = []
 var List_esExports = { render: List_render, staticRenderFns: List_staticRenderFns }
 /* harmony default export */ var demo_List = (List_esExports);
@@ -20858,7 +20861,6 @@ Notice_src_Notice.install = (Vue) => {
 * @params label String 右侧内容
 * @params iconName String 对应icon组件name
 * @params message String 标题下面的描述
-* @params isLink Boolean 是否可以点击
 * @params disabled Boolean 是否禁用
 * @slot leftIcon 左侧icon 标签
 * @slot name 左侧标题 标签
@@ -20887,10 +20889,6 @@ Notice_src_Notice.install = (Vue) => {
       type: String,
       default: ''
     },
-    isLink: {
-      type: Boolean,
-      default: true
-    },
     disabled: {
       type: Boolean,
       default: false
@@ -20898,20 +20896,18 @@ Notice_src_Notice.install = (Vue) => {
   },
   methods: {
     bindClick: function bindClick(e) {
-      if (this.isLink) {
-        this.$emit('click', e);
-      }
+      this.$emit('click', e);
     }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-b491600a","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Cell/src/Cell-item.vue
-var Cell_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-cell-item-container",class:{ 'z-cell-active': _vm.isLink, 'z-cell-disabled': _vm.disabled },on:{"click":_vm.bindClick}},[(_vm.title || _vm.$slots.leftIcon || _vm.iconName || _vm.$slots.name)?_c('div',{staticClass:"z-cell-item-title"},[_c('div',{staticClass:"z-cell-item-title-top"},[_vm._t("leftIcon",[(_vm.iconName)?_c('i',{staticClass:"z-cell-item-title-icon"},[_c('icon',{attrs:{"name":_vm.iconName}})],1):_vm._e()]),_vm._v(" "),_vm._t("title",[_c('span',{staticClass:"z-cell-item-title-info"},[_vm._v(_vm._s(_vm.title))])])],2),_vm._v(" "),(_vm.message)?_c('span',{staticClass:"z-cell-item-title-bottom",domProps:{"innerHTML":_vm._s(_vm.message)}}):_vm._e()]):_vm._e(),_vm._v(" "),(_vm.label || _vm.$slots.label || _vm.$slots.rightIcon || _vm.isLink)?_c('div',{staticClass:"z-cell-item-label"},[_vm._t("label",[_c('span',{staticClass:"z-cell-item-label-info"},[_vm._v(_vm._s(_vm.label))])]),_vm._v(" "),_vm._t("rightIcon",[(_vm.isLink)?_c('i',{staticClass:"z-cell-item-label-icon"},[_c('icon',{attrs:{"name":"arrowRight"}})],1):_vm._e()])],2):_vm._e()])}
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-5b032a80","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Cell/src/Cell-item.vue
+var Cell_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-cell-item-container",class:{ 'z-cell-disabled': _vm.disabled },on:{"click":_vm.bindClick}},[(_vm.title || _vm.$slots.leftIcon || _vm.iconName || _vm.$slots.name)?_c('div',{staticClass:"z-cell-item-title"},[_c('div',{staticClass:"z-cell-item-title-top"},[_vm._t("leftIcon",[_c('icon',{attrs:{"name":_vm.iconName}})]),_vm._v(" "),_vm._t("title",[_c('span',{staticClass:"z-cell-item-title-info"},[_vm._v(_vm._s(_vm.title))])])],2),_vm._v(" "),(_vm.message)?_c('span',{staticClass:"z-cell-item-title-bottom",domProps:{"innerHTML":_vm._s(_vm.message)}}):_vm._e()]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"z-cell-item-label"},[(_vm.label)?_vm._t("label",[_c('span',{staticClass:"z-cell-item-label-info"},[_vm._v(_vm._s(_vm.label))])]):_vm._e(),_vm._v(" "),_vm._t("rightIcon",[_c('icon',{attrs:{"name":"arrowRight"}})])],2)])}
 var Cell_item_staticRenderFns = []
 var Cell_item_esExports = { render: Cell_item_render, staticRenderFns: Cell_item_staticRenderFns }
 /* harmony default export */ var src_Cell_item = (Cell_item_esExports);
 // CONCATENATED MODULE: ../src/components/Cell/src/Cell-item.vue
 function Cell_item_injectStyle (ssrContext) {
-  __webpack_require__("PuUm")
+  __webpack_require__("Y+IO")
 }
 var Cell_item_normalizeComponent = __webpack_require__("AYo0")
 /* script */
@@ -21255,7 +21251,7 @@ var Tabbar_Component = Tabbar_normalizeComponent(
     },
     height: {
       type: [String, Number],
-      default: '42px'
+      default: '46px'
     },
     point: {
       type: Boolean,
@@ -21285,14 +21281,14 @@ var Tabbar_Component = Tabbar_normalizeComponent(
     }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-9362eade","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tabbar/src/Tabbar-item.vue
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-ad8d6ad6","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tabbar/src/Tabbar-item.vue
 var Tabbar_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"z-tab-bar-item-container",class:[ {'z-tab-bar-active': _vm.active} ],style:({ height: _vm.height }),on:{"click":_vm.bindClick}},[(_vm.iconName || _vm.$slots.icon)?_c('div',{staticClass:"z-tab-bar-item-icon-wrapper",class:[{'z-tab-bar-item-icon-point': _vm.point}]},[_vm._t("icon",[_c('icon',{staticClass:"z-tab-bar-icon-info",attrs:{"name":_vm.iconName}})]),_vm._v(" "),(_vm.info)?_c('em',{staticClass:"z-tab-bar-item-info"},[_vm._v(_vm._s(typeof _vm.info === 'number' ? (_vm.info >= 99 ? '99+' : _vm.info) : _vm.info))]):_vm._e()],2):_vm._e(),_vm._v(" "),(_vm.label || _vm.$slots.label)?_c('div',{staticClass:"z-tab-bar-item-label-wrapper"},[_vm._t("label",[_c('span',{staticClass:"z-tab-bar-item-label-info"},[_vm._v(_vm._s(_vm.label))])])],2):_vm._e()])}
 var Tabbar_item_staticRenderFns = []
 var Tabbar_item_esExports = { render: Tabbar_item_render, staticRenderFns: Tabbar_item_staticRenderFns }
 /* harmony default export */ var src_Tabbar_item = (Tabbar_item_esExports);
 // CONCATENATED MODULE: ../src/components/Tabbar/src/Tabbar-item.vue
 function Tabbar_item_injectStyle (ssrContext) {
-  __webpack_require__("Xdkq")
+  __webpack_require__("HggN")
 }
 var Tabbar_item_normalizeComponent = __webpack_require__("AYo0")
 /* script */
@@ -22160,7 +22156,7 @@ var info_Notice_Component = info_Notice_normalizeComponent(
 /* harmony default export */ var info_Cell = ({
   data: function data() {
     return {
-      data1: [{ title: '标题', label: '内容' }, { title: '标题', label: '内容', message: '我是描述哈哈' }, { title: '标题', label: '内容', iconName: 'success' }, { title: '标题', label: '内容', isLink: true }, { title: '标题' }, { label: '内容' }, { title: '禁用', disabled: true, isLink: true }],
+      data1: [{ title: '标题', label: '内容' }, { title: '标题', label: '内容', message: '我是描述哈哈' }, { title: '标题', label: '内容', iconName: 'success' }, { title: '标题', label: '内容', isLink: true }, { title: '禁用', disabled: true, isLink: true }, { title: '标题' }, { label: '内容' }],
       data2: [{ title: '单个', iconName: 'alipay', isLink: true }]
     };
   },
@@ -22171,8 +22167,8 @@ var info_Notice_Component = info_Notice_normalizeComponent(
     }
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-6dd01e8d","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/info/Cell.vue
-var info_Cell_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item",staticStyle:{"width":"100vw","height":"100vh","background-color":"#e5e5e5"}},[_c('h3',[_vm._v("多列")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',_vm._l((_vm.data1),function(item,index){return _c('z-cell-item',{key:index,attrs:{"title":item.title,"label":item.label,"iconName":item.iconName,"isLink":item.isLink,"disabled":item.disabled,"message":item.message},on:{"click":_vm.bindClick}})}))],1),_vm._v(" "),_c('h3',[_vm._v("单列")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',_vm._l((_vm.data2),function(item,index){return _c('z-cell-item',{key:index,attrs:{"title":item.title,"label":item.label,"iconName":item.iconName,"isLink":item.isLink,"disabled":item.disabled,"message":item.message},on:{"click":_vm.bindClick}})}))],1),_vm._v(" "),_c('h3',[_vm._v("自定义")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',[_c('z-cell-item',{attrs:{"title":"用户名"}},[_c('i',{attrs:{"slot":"leftIcon"},slot:"leftIcon"},[_c('z-icon',{attrs:{"name":"user"}})],1),_vm._v(" "),_c('i',{attrs:{"slot":"rightIcon"},slot:"rightIcon"},[_c('z-icon',{attrs:{"name":"search"}})],1)])],1)],1)])}
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-30840f6d","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/info/Cell.vue
+var info_Cell_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item",staticStyle:{"width":"100vw","height":"100vh"}},[_c('h3',[_vm._v("多列")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',_vm._l((_vm.data1),function(item,index){return _c('z-cell-item',{key:index,attrs:{"title":item.title,"label":item.label,"iconName":item.iconName,"isLink":item.isLink,"disabled":item.disabled,"message":item.message},on:{"click":_vm.bindClick}})}))],1),_vm._v(" "),_c('h3',[_vm._v("单列")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',_vm._l((_vm.data2),function(item,index){return _c('z-cell-item',{key:index,attrs:{"title":item.title,"label":item.label,"iconName":item.iconName,"isLink":item.isLink,"disabled":item.disabled,"message":item.message},on:{"click":_vm.bindClick}})}))],1),_vm._v(" "),_c('h3',[_vm._v("自定义")]),_vm._v(" "),_c('div',{staticStyle:{"width":"100%","padding":"10px 0"}},[_c('z-cell',[_c('z-cell-item',{attrs:{"title":"用户名"}},[_c('z-icon',{attrs:{"slot":"leftIcon","name":"user"},slot:"leftIcon"}),_vm._v(" "),_c('z-icon',{attrs:{"slot":"rightIcon","name":"search"},slot:"rightIcon"})],1)],1)],1)])}
 var info_Cell_staticRenderFns = []
 var info_Cell_esExports = { render: info_Cell_render, staticRenderFns: info_Cell_staticRenderFns }
 /* harmony default export */ var demo_info_Cell = (info_Cell_esExports);
@@ -22693,9 +22689,9 @@ var Noticle_Component = Noticle_normalizeComponent(
 
 /* harmony default export */ var doc_Noticle = (Noticle_Component.exports);
 
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-6e5f5f37","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Cell.vue
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-4a436a8e","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Cell.vue
 var doc_Cell_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-var doc_Cell_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("参数配置说明")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params title String 左侧标题\n        * @params label String 右侧内容\n        * @params iconName String 对应icon组件name\n        * @params message String 标题下面的描述\n        * @params isLink Boolean 是否可以点击\n        * @params disabled Boolean 是否禁用\n        * @slot leftIcon 左侧icon 标签\n        * @slot name 左侧标题 标签\n        * @slot rightIcon 右侧icon 标签\n        * @slot label 右侧内容 标签\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("普通使用事例")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n       <z-cell>\n          <z-cell-item v-for=\"(item, index) in data1\"\n                       :key=\"index\"\n                       :title=\"item.title\"\n                       :label=\"item.label\"\n                       :iconName=\"item.iconName\"\n                       :isLink=\"item.isLink\"\n                       :disabled=\"item.disabled\"\n                       :message=\"item.message\"\n                       @click=\"bindClick\">\n          </z-cell-item>\n        </z-cell>\n\n       data1: [\n        {title: '标题', label: '内容'},\n        {title: '标题', label: '内容', message: '我是描述哈哈'},\n        {title: '标题', label: '内容', iconName: 'success'},\n        {title: '标题', label: '内容', isLink: true},\n        {title: '标题'},\n        {label: '内容'},\n        {title: '禁用', disabled: true, isLink: true}\n      ]\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("自定义用法")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-cell>\n        <z-cell-item title=\"用户名\">\n          <i slot=\"leftIcon\"><z-icon name=\"user\" /></i>\n          <i slot=\"rightIcon\"><z-icon name=\"search\" /></i>\n        </z-cell-item>\n      </z-cell>\n    ")]),_vm._v("\n  ")])])}]
+var doc_Cell_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("参数配置说明")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n        * @params title String 左侧标题\n        * @params label String 右侧内容\n        * @params iconName String 对应icon组件name\n        * @params message String 标题下面的描述\n        * @params disabled Boolean 是否禁用\n        * @slot leftIcon 左侧icon 标签\n        * @slot name 左侧标题 标签\n        * @slot rightIcon 右侧icon 标签\n        * @slot label 右侧内容 标签\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("普通使用事例")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n       <z-cell>\n          <z-cell-item v-for=\"(item, index) in data1\"\n                       :key=\"index\"\n                       :title=\"item.title\"\n                       :label=\"item.label\"\n                       :iconName=\"item.iconName\"\n                       :isLink=\"item.isLink\"\n                       :disabled=\"item.disabled\"\n                       :message=\"item.message\"\n                       @click=\"bindClick\">\n          </z-cell-item>\n        </z-cell>\n\n       data1: [\n        {title: '标题', label: '内容'},\n        {title: '标题', label: '内容', message: '我是描述哈哈'},\n        {title: '标题', label: '内容', iconName: 'success'},\n        {title: '标题', label: '内容', isLink: true},\n        {title: '标题'},\n        {label: '内容'},\n        {title: '禁用', disabled: true, isLink: true}\n      ]\n    ")]),_vm._v("\n  ")]),_vm._v(" "),_c('h3',[_vm._v("自定义用法")]),_vm._v(" "),_c('pre',[_vm._v("    "),_c('code',[_vm._v("\n      <z-cell>\n        <z-cell-item title=\"用户名\">\n          <i slot=\"leftIcon\"><z-icon name=\"user\" /></i>\n          <i slot=\"rightIcon\"><z-icon name=\"search\" /></i>\n        </z-cell-item>\n      </z-cell>\n    ")]),_vm._v("\n  ")])])}]
 var doc_Cell_esExports = { render: doc_Cell_render, staticRenderFns: doc_Cell_staticRenderFns }
 /* harmony default export */ var doc_Cell = (doc_Cell_esExports);
 // CONCATENATED MODULE: ../example/views/demo/doc/Cell.vue

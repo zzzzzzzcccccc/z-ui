@@ -1,13 +1,9 @@
 <template>
   <div class="wrapper">
     <z-scroll style="width:100vw;height: 100vh;">
-      <ul slot="list">
-        <router-link tag="li" v-for="(item, index) in list" :key="index" :to="`/${item.path}`">
-          <z-cell>
-            <z-cell-item :title="item.label" />
-          </z-cell>
-        </router-link>
-      </ul>
+      <z-cell slot="list">
+        <z-cell-item :title="item.label" v-for="(item, index) in list" :key="index" @click="link(item)" />
+      </z-cell>
     </z-scroll>
   </div>
 </template>
@@ -18,6 +14,11 @@
   export default {
     computed: {
       list: () => srcList
+    },
+    methods: {
+      link ({ path }) {
+        this.$router.push(`/${path}`)
+      }
     }
   }
 </script>
