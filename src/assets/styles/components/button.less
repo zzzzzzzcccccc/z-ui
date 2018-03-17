@@ -10,17 +10,23 @@
   cursor: pointer;
   position: relative;
   &:after{
-    background-color: #000;
     content: "";
-    opacity: 0;
+    display: block;
     position: absolute;
     left: 0;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, #000 10%, transparent 10.01%) no-repeat 0 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.5s;
   }
   &:active:after{
-    opacity: 0.2;
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
   }
 }
 

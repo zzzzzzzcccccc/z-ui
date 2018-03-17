@@ -10,17 +10,29 @@
   position: relative;
 }
 .z-button:after {
-  background-color: #000;
   content: "";
-  opacity: 0;
+  display: block;
   position: absolute;
   left: 0;
-  right: 0;
   top: 0;
+  right: 0;
   bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, #000 10%, transparent 10.01%) no-repeat 0 50%;
+  -webkit-transform: scale(10, 10);
+          transform: scale(10, 10);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.5s, -webkit-transform 0.3s;
 }
 .z-button:active:after {
-  opacity: 0.2;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0.3;
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 .z-button-normal {
   height: 42px;
@@ -1134,13 +1146,21 @@ to {
 }
 .z-tag-wrapper:after {
   content: "";
+  display: inline-block;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #000;
+  pointer-events: none;
+  background: radial-gradient(circle, #000 10%, transparent 10.01%) no-repeat 0 50%;
+  -webkit-transform: scale(10, 10);
+          transform: scale(10, 10);
   opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.5s, -webkit-transform 0.3s;
 }
 /* size */
 .z-tag-normal {
@@ -1220,7 +1240,11 @@ to {
   cursor: pointer;
 }
 .z-tag-link:active .z-tag-wrapper:after {
-  opacity: 0.2;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0.3;
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 .z-tag-icon {
   padding-right: 3px;
@@ -1268,6 +1292,31 @@ to {
           align-items: center;
   cursor: pointer;
   position: relative;
+}
+.z-tab-bar-item-container:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, #000 10%, transparent 10.01%) no-repeat 0 50%;
+  -webkit-transform: scale(5, 5);
+          transform: scale(5, 5);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.5s, -webkit-transform 0.3s;
+}
+.z-tab-bar-item-container:active:after {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0.3;
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 .z-tab-bar-active {
   color: #409EFF;
@@ -1378,7 +1427,7 @@ to {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #000;
+  background: #000;
   opacity: 0;
 }
 .z-collapse-item-header:active:after {
