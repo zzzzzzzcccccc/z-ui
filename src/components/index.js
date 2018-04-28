@@ -12,6 +12,7 @@ import Cell from './Cell'
 import Tag from './Tag'
 import TabBar from './Tabbar'
 import Collapse from './Collapse'
+import Tab from './Tab'
 
 export {
   Bubble,
@@ -27,5 +28,6 @@ export {
   Cell,
   Tag,
   TabBar,
-  Collapse
+  Collapse,
+  Tab
 }

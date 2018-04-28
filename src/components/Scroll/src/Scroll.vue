@@ -142,11 +142,14 @@
           return
         }
         this._calculateMinHeight()
+
         let options = Object.assign({}, DEFAULT_OPTIONS, {
           scrollY: this.direction === DIRECTION_V,
           scrollX: this.direction === DIRECTION_H
         }, this.options)
+
         this.scroll = new BScroll(this.$refs.scrollWrapper, options)
+
         if (this.listenScroll) {
           this.scroll.on('scroll', (pos) => {
             this.$emit(EVENT_SCROLL, pos)

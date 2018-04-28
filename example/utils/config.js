@@ -11,7 +11,8 @@ export const srcList = [
   {path: 'cell', label: '单元格'},
   {path: 'tag', label: 'tag标签'},
   {path: 'tabbar', label: 'tabbar导航'},
-  {path: 'collapse', label: '折叠窗'}
+  {path: 'collapse', label: '折叠窗'},
+  {path: 'tab', label: 'tab切换'}
 ]
 
 export const deviceTypeMap = {

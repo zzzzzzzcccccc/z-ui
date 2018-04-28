@@ -16,6 +16,7 @@ import Cell from './demo/info/Cell'
 import Tag from './demo/info/Tag'
 import TabBar from './demo/info/Tabbar'
 import Collapse from './demo/info/Collapse'
+import Tab from './demo/info/Tab'
 
 // doc列表
 import docIcon from './demo/doc/Icon'
@@ -31,6 +32,7 @@ import docCell from './demo/doc/Cell'
 import docTag from './demo/doc/Tag'
 import docTabBar from './demo/doc/Tabbar'
 import docCollapse from './demo/doc/Collapse'
+import docTab from './demo/doc/Tab'
 
 export {
   Container,
@@ -49,6 +51,7 @@ export {
   Tag,
   TabBar,
   Collapse,
+  Tab,
 
   docIcon,
   docScroll,
@@ -63,4 +66,5 @@ export {
   docTag,
   docTabBar,
   docCollapse,
+  docTab,
 }

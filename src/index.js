@@ -12,7 +12,8 @@ import {
   Cell,
   Tag,
   TabBar,
-  Collapse
+  Collapse,
+  Tab
 } from './components'
 
 const components = [
@@ -26,7 +27,8 @@ const components = [
   Cell,
   Tag,
   TabBar,
-  Collapse
+  Collapse,
+  Tab
 ]
 
 const install = (Vue, opts={}) => {

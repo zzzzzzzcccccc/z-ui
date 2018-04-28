@@ -17,6 +17,7 @@ import {
   Tag,
   TabBar,
   Collapse,
+  Tab,
 
   docIcon,
   docScroll,
@@ -31,6 +32,7 @@ import {
   docTag,
   docTabBar,
   docCollapse,
+  docTab,
 } from '../views'
 
 Vue.use(Router)
@@ -53,6 +55,7 @@ export default new Router({
     {path: '/tag', component: Tag},
     {path: '/tabbar', component: TabBar},
     {path: '/collapse', component: Collapse},
+    {path: '/tab', component: Tab},
 
     {path: '/doc-icon', component: docIcon},
     {path: '/doc-toast', component: docToast},
@@ -66,6 +69,7 @@ export default new Router({
     {path: '/doc-cell', component: docCell},
     {path: '/doc-tag', component: docTag},
     {path: '/doc-tabbar', component: docTabBar},
-    {path: '/doc-collapse', component: docCollapse}
+    {path: '/doc-collapse', component: docCollapse},
+    {path: '/doc-tab', component: docTab}
   ]
 })

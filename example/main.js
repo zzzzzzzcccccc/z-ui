@@ -18,6 +18,7 @@ import {
   Tag,
   TabBar,
   Collapse,
+  Tab,
 } from '../src/components'
 Vue.use(Icon)
 Vue.use(Scroll)
@@ -32,6 +33,8 @@ Vue.use(TabBar)
 Vue.use(TabBar.Item)
 Vue.use(Collapse)
 Vue.use(Collapse.Item)
+Vue.use(Tab)
+Vue.use(Tab.Item)
 
 
 /* eslint-disable no-new */
