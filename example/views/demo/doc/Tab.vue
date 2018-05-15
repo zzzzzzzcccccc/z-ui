@@ -1,3 +1,6 @@
-<div class="item">
-  doc
-</div>
+<template>
+  <div>
+123131
+doc
+  </div>
+</template>

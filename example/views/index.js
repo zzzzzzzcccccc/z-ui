@@ -66,5 +66,5 @@ export {
   docTag,
   docTabBar,
   docCollapse,
-  docTab,
+  docTab
 }

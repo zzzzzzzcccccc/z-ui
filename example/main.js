@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 import './assets/style/reset.css'
 
 import {
@@ -20,21 +20,21 @@ import {
   Collapse,
   Tab,
 } from '../src/components'
-Vue.use(Icon)
-Vue.use(Scroll)
-Vue.use(Button)
-Vue.use(Swipe)
-Vue.use(Popup)
-Vue.use(Notice)
-Vue.use(Cell)
-Vue.use(Cell.Item)
-Vue.use(Tag)
-Vue.use(TabBar)
-Vue.use(TabBar.Item)
-Vue.use(Collapse)
-Vue.use(Collapse.Item)
-Vue.use(Tab)
-Vue.use(Tab.Item)
+Vue.use(Icon);
+Vue.use(Scroll);
+Vue.use(Button);
+Vue.use(Swipe);
+Vue.use(Popup);
+Vue.use(Notice);
+Vue.use(Cell);
+Vue.use(Cell.Item);
+Vue.use(Tag);
+Vue.use(TabBar);
+Vue.use(TabBar.Item);
+Vue.use(Collapse);
+Vue.use(Collapse.Item);
+Vue.use(Tab);
+Vue.use(Tab.Item);
 
 
 /* eslint-disable no-new */
