@@ -13,7 +13,7 @@
            :style="[{ backgroundColor: `${lineBackGroundColor}`}, ...lineStyle]">
       </div>
     </div>
-    <div class="z-tab-body-wrapper">
+    <div class="z-tab-body-wrapper" ref="content">
       <slot></slot>
     </div>
   </section>
@@ -28,6 +28,7 @@
   * @params lineBackGroundColor 底部下滑线的颜色
   * @params activeTextStyle     激活的字体颜色
   * @params inactiveTintStyle   未激活的颜色
+  * @params lock                是否开启左右滑动切换
   * */
   export default {
     name: 'zTab',
@@ -61,6 +62,10 @@
             color: '#333'
           }
         }
+      },
+      lock: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
@@ -75,7 +80,8 @@
     methods: {
       onReady () {
         this.setList();
-        this.setStyle()
+        this.setStyle();
+        this.handleTouch()
       },
       setStyle () {
         this.$nextTick(() => {
@@ -132,6 +138,47 @@
           }
         };
         animate()
+      },
+      handleTouch() { // 滚动事件
+        if (!this.lock) {
+          return
+        }
+
+        const content = this.$refs.content;
+        let index, startX, startY, endX, endY;
+
+        content.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+
+          index = this.value;
+          startX = e.touches[0].pageX;
+          startY = e.touches[0].pageY;
+        });
+
+        content.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+
+          endX = e.touches[0].pageX;
+          endY = e.touches[0].pageY;
+        });
+
+        content.addEventListener('touchend', (e) => {
+          e.preventDefault();
+
+          if (startX > endX) {
+            if (index === this.list.length - 1) {
+              return
+            }
+
+            this.clickItem(index + 1)
+          } else {
+            if (index === 0) {
+              return
+            }
+
+            this.clickItem(index - 1)
+          }
+        })
       }
     },
     watch: {

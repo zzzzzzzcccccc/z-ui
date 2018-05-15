@@ -12074,6 +12074,13 @@ exports.RETURN = RETURN;
 
 /***/ }),
 
+/***/ "WrBK":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "Y+IO":
 /***/ (function(module, exports) {
 
@@ -15399,7 +15406,8 @@ const config_srcList = [
   {path: 'cell', label: '单元格'},
   {path: 'tag', label: 'tag标签'},
   {path: 'tabbar', label: 'tabbar导航'},
-  {path: 'collapse', label: '折叠窗'}
+  {path: 'collapse', label: '折叠窗'},
+  {path: 'tab', label: 'tab切换'}
 ]
 
 const config_deviceTypeMap = {
@@ -19709,11 +19717,14 @@ var Scroll_DEFAULT_OPTIONS = {
         return;
       }
       this._calculateMinHeight();
+
       var options = assign_default()({}, Scroll_DEFAULT_OPTIONS, {
         scrollY: this.direction === DIRECTION_V,
         scrollX: this.direction === DIRECTION_H
       }, this.options);
+
       this.scroll = new bscroll_esm(this.$refs.scrollWrapper, options);
+
       if (this.listenScroll) {
         this.scroll.on('scroll', function (pos) {
           _this2.$emit(EVENT_SCROLL, pos);
@@ -19839,14 +19850,14 @@ var Scroll_DEFAULT_OPTIONS = {
     Icon: components_Icon
   }
 });
-// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-2b334320","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Scroll/src/Scroll.vue
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-0a7de350","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Scroll/src/Scroll.vue
 var src_Scroll_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"scrollWrapper",staticClass:"z-scroll-wrapper"},[_c('div',{staticClass:"z-scroll-content"},[_c('div',{ref:"listWrapper",staticClass:"z-scroll-list-wrapper"},[_vm._t("list",[_c('ul',{staticClass:"z-scroll-list"},_vm._l((_vm.data),function(item){return _c('li',{staticClass:"z-scroll-list-item",on:{"click":function($event){_vm.clickItem(item)}}},[_vm._v(_vm._s(item))])}))])],2),_vm._v(" "),_vm._t("pullup",[(_vm.pullUpLoad)?_c('div',{staticClass:"z-pullup-wrapper"},[(!_vm.isPullUpLoad)?_c('div',{staticClass:"z-before-trigger"},[_c('span',[_vm._v(_vm._s(_vm.pullUpTxt))])]):_c('div',{staticClass:"z-after-trigger"},[_c('icon',{attrs:{"name":"loading"}})],1)]):_vm._e()],{pullUpLoad:_vm.pullUpLoad,isPullUpLoad:_vm.isPullUpLoad})],2),_vm._v(" "),_vm._t("pulldown",[(_vm.pullDownRefresh)?_c('div',{staticClass:"z-pulldown-wrapper",style:(_vm.pullDownStyle)},[(_vm.beforePullDown)?_c('div',{staticClass:"z-before-trigger"},[_c('bubble',{attrs:{"y":_vm.bubbleY}})],1):_c('div',{staticClass:"z-after-trigger"},[(_vm.isPullingDown)?_c('div',{staticClass:"z-scroll-loading"},[_c('icon',{attrs:{"name":"loading"}})],1):_c('div',[_c('span',[_vm._v(_vm._s(_vm.refreshTxt))])])])]):_vm._e()],{pullDownRefresh:_vm.pullDownRefresh,pullDownStyle:_vm.pullDownStyle,beforePullDown:_vm.beforePullDown,isPullingDown:_vm.isPullingDown,bubbleY:_vm.bubbleY})],2)}
 var src_Scroll_staticRenderFns = []
 var src_Scroll_esExports = { render: src_Scroll_render, staticRenderFns: src_Scroll_staticRenderFns }
 /* harmony default export */ var Scroll_src_Scroll = (src_Scroll_esExports);
 // CONCATENATED MODULE: ../src/components/Scroll/src/Scroll.vue
 function src_Scroll_injectStyle (ssrContext) {
-  __webpack_require__("hVZ0")
+  __webpack_require__("WrBK")
 }
 var src_Scroll_normalizeComponent = __webpack_require__("AYo0")
 /* script */
@@ -21614,7 +21625,331 @@ Collapse_src_Collapse.Item = Collapse_src_Collapse_item
 
 /* harmony default export */ var components_Collapse = (Collapse_src_Collapse);
 
+// EXTERNAL MODULE: ../src/utils/raf.js
+var raf = __webpack_require__("s4nl");
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Tab/src/Tab.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/*
+* @params value               当前的tab索引
+* @params tabsStyle           tabs的样式
+* @params lineBackGroundColor 底部下滑线的颜色
+* @params activeTextStyle     激活的字体颜色
+* @params inactiveTintStyle   未激活的颜色
+* @params lock                是否开启左右滑动切换
+* */
+/* harmony default export */ var Tab = ({
+  name: 'zTab',
+  props: {
+    value: {
+      type: Number,
+      required: true
+    },
+    tabsStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    lineBackGroundColor: {
+      type: String,
+      default: '#409EFF'
+    },
+    activeTextStyle: {
+      type: Object,
+      default: function _default() {
+        return {
+          color: '#409EFF'
+        };
+      }
+    },
+    inactiveTintStyle: {
+      type: Object,
+      default: function _default() {
+        return {
+          color: '#333'
+        };
+      }
+    },
+    lock: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data: function data() {
+    return {
+      list: [],
+      lineStyle: {}
+    };
+  },
+  mounted: function mounted() {
+    this.onReady();
+  },
+
+  methods: {
+    onReady: function onReady() {
+      this.setList();
+      this.setStyle();
+      this.handleTouch();
+    },
+    setStyle: function setStyle() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        _this.setLineStyle(_this.value);
+        _this.mathScrollX(_this.value);
+      });
+    },
+    setLineStyle: function setLineStyle(index) {
+      // 写入下划线样式
+      var tab = this.$refs.tabs[index];
+      var width = tab.offsetWidth;
+      var left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+
+      this.lineStyle = {
+        width: width + 'px',
+        transform: 'translateX(' + left + 'px)'
+      };
+    },
+    setList: function setList() {
+      var _this2 = this;
+
+      // 写入tabs
+      this.$children.forEach(function (item, index) {
+        _this2.list.push(item.title);
+      });
+    },
+    getActiveItem: function getActiveItem() {
+      var _this3 = this;
+
+      // 获取当前激活的tabItem
+      this.$children.forEach(function (item, index) {
+        item.active = index === _this3.value;
+      });
+    },
+    clickItem: function clickItem(index) {
+      // 点击tab
+      this.onChange(index);
+    },
+    onChange: function onChange(index) {
+      // tab切换变化
+      this.setLineStyle(index);
+      this.mathScrollX(index);
+
+      this.$emit('input', index);
+      this.$emit('change', index);
+    },
+    mathScrollX: function mathScrollX(index) {
+      // 获取滚动的距离
+      var tab = this.$refs.tabs[index];
+      var nav = this.$refs.nav;
+      var scrollLeft = nav.scrollLeft,
+          navWidth = nav.offsetWidth;
+      var offsetLeft = tab.offsetLeft,
+          tabWidth = tab.offsetWidth;
+
+
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
+    },
+    scrollTo: function scrollTo(el, from, to) {
+      // 执行滚动动画
+      var count = 0;
+      var frames = Math.round(0.2 * 1000 / 16);
+      var animate = function animate() {
+        el.scrollLeft += (to - from) / frames;
+
+        if (++count < frames) {
+          Object(raf["a" /* raf */])(animate);
+        }
+      };
+      animate();
+    },
+    handleTouch: function handleTouch() {
+      var _this4 = this;
+
+      // 滚动事件
+      if (!this.lock) {
+        return;
+      }
+
+      var content = this.$refs.content;
+      var index = void 0,
+          startX = void 0,
+          startY = void 0,
+          endX = void 0,
+          endY = void 0;
+
+      content.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+
+        index = _this4.value;
+        startX = e.touches[0].pageX;
+        startY = e.touches[0].pageY;
+      });
+
+      content.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+
+        endX = e.touches[0].pageX;
+        endY = e.touches[0].pageY;
+      });
+
+      content.addEventListener('touchend', function (e) {
+        e.preventDefault();
+
+        if (startX > endX) {
+          if (index === _this4.list.length - 1) {
+            return;
+          }
+
+          _this4.clickItem(index + 1);
+        } else {
+          if (index === 0) {
+            return;
+          }
+
+          _this4.clickItem(index - 1);
+        }
+      });
+    }
+  },
+  watch: {
+    list: function list() {
+      this.getActiveItem();
+    },
+    value: function value() {
+      this.getActiveItem();
+    }
+  }
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-3d3de85c","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tab/src/Tab.vue
+var Tab_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"z-tab-container"},[_c('div',{ref:"nav",staticClass:"z-tab-title-wrapper",style:([].concat( _vm.tabsStyle ))},[_c('div',{ref:"tabsWrapper",staticClass:"z-tab-title-main"},_vm._l((_vm.list),function(item,index){return _c('div',{key:index,ref:"tabs",refInFor:true,staticClass:"z-tab-title-item",class:{ 'z-tab-title-active': index === _vm.value },on:{"click":function($event){_vm.clickItem(index)}}},[_c('span',{staticClass:"title-cell",style:([ index === _vm.value ? _vm.activeTextStyle : _vm.inactiveTintStyle ])},[_vm._v(_vm._s(item))])])})),_vm._v(" "),_c('div',{staticClass:"z-tab-title-line",style:([{ backgroundColor: ("" + _vm.lineBackGroundColor)} ].concat( _vm.lineStyle))})]),_vm._v(" "),_c('div',{ref:"content",staticClass:"z-tab-body-wrapper"},[_vm._t("default")],2)])}
+var Tab_staticRenderFns = []
+var Tab_esExports = { render: Tab_render, staticRenderFns: Tab_staticRenderFns }
+/* harmony default export */ var src_Tab = (Tab_esExports);
+// CONCATENATED MODULE: ../src/components/Tab/src/Tab.vue
+function Tab_injectStyle (ssrContext) {
+  __webpack_require__("q+78")
+}
+var Tab_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Tab___vue_template_functional__ = false
+/* styles */
+var Tab___vue_styles__ = Tab_injectStyle
+/* scopeId */
+var Tab___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Tab___vue_module_identifier__ = null
+var Tab_Component = Tab_normalizeComponent(
+  Tab,
+  src_Tab,
+  Tab___vue_template_functional__,
+  Tab___vue_styles__,
+  Tab___vue_scopeId__,
+  Tab___vue_module_identifier__
+)
+
+/* harmony default export */ var Tab_src_Tab = (Tab_Component.exports);
+
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../src/components/Tab/src/Tab-item.vue
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var Tab_item = ({
+  name: 'zTabItem',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  mounted: function mounted() {},
+
+  methods: {}
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-0db532e0","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../src/components/Tab/src/Tab-item.vue
+var Tab_item_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{directives:[{name:"show",rawName:"v-show",value:(_vm.active),expression:"active"}],staticClass:"z-tab-body-main"},[_vm._t("default")],2)}
+var Tab_item_staticRenderFns = []
+var Tab_item_esExports = { render: Tab_item_render, staticRenderFns: Tab_item_staticRenderFns }
+/* harmony default export */ var src_Tab_item = (Tab_item_esExports);
+// CONCATENATED MODULE: ../src/components/Tab/src/Tab-item.vue
+var Tab_item_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var Tab_item___vue_template_functional__ = false
+/* styles */
+var Tab_item___vue_styles__ = null
+/* scopeId */
+var Tab_item___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var Tab_item___vue_module_identifier__ = null
+var Tab_item_Component = Tab_item_normalizeComponent(
+  Tab_item,
+  src_Tab_item,
+  Tab_item___vue_template_functional__,
+  Tab_item___vue_styles__,
+  Tab_item___vue_scopeId__,
+  Tab_item___vue_module_identifier__
+)
+
+/* harmony default export */ var Tab_src_Tab_item = (Tab_item_Component.exports);
+
+// CONCATENATED MODULE: ../src/components/Tab/index.js
+
+
+
+Tab_src_Tab.install = (Vue) => {
+  Vue.component(Tab_src_Tab.name, Tab_src_Tab)
+  Vue.component(Tab_src_Tab_item.name, Tab_src_Tab_item)
+}
+
+Tab_src_Tab.Item = Tab_src_Tab_item
+
+/* harmony default export */ var components_Tab = (Tab_src_Tab);
+
 // CONCATENATED MODULE: ../src/components/index.js
+
 
 
 
@@ -22410,6 +22745,73 @@ var info_Collapse_Component = info_Collapse_normalizeComponent(
 
 /* harmony default export */ var views_demo_info_Collapse = (info_Collapse_Component.exports);
 
+// CONCATENATED MODULE: ../node_modules/_babel-loader@7.1.4@babel-loader/lib!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=script&index=0!../example/views/demo/info/Tab.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var info_Tab = ({
+  data: function data() {
+    return {
+      activeIndex1: 0,
+      activeIndex2: 1
+    };
+  },
+
+  methods: {}
+});
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-21779c5b","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/info/Tab.vue
+var info_Tab_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticStyle:{"padding":"10px 0"}},[_c('h3',[_vm._v("多列滚动")]),_vm._v(" "),_c('z-tab',{model:{value:(_vm.activeIndex1),callback:function ($$v) {_vm.activeIndex1=$$v},expression:"activeIndex1"}},_vm._l((12),function(index){return _c('z-tab-item',{key:index,attrs:{"title":("选项" + index)}},[_vm._v("\n        内容"+_vm._s(index)+"\n      ")])}))],1),_vm._v(" "),_c('div',{staticStyle:{"padding":"10px 0"}},[_c('h3',[_vm._v("正常")]),_vm._v(" "),_c('z-tab',{model:{value:(_vm.activeIndex2),callback:function ($$v) {_vm.activeIndex2=$$v},expression:"activeIndex2"}},_vm._l((4),function(index){return _c('z-tab-item',{key:index,attrs:{"title":("选项" + index)}},[_vm._v("\n        内容"+_vm._s(index)+"\n      ")])}))],1)])}
+var info_Tab_staticRenderFns = []
+var info_Tab_esExports = { render: info_Tab_render, staticRenderFns: info_Tab_staticRenderFns }
+/* harmony default export */ var demo_info_Tab = (info_Tab_esExports);
+// CONCATENATED MODULE: ../example/views/demo/info/Tab.vue
+var info_Tab_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var info_Tab___vue_template_functional__ = false
+/* styles */
+var info_Tab___vue_styles__ = null
+/* scopeId */
+var info_Tab___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var info_Tab___vue_module_identifier__ = null
+var info_Tab_Component = info_Tab_normalizeComponent(
+  info_Tab,
+  demo_info_Tab,
+  info_Tab___vue_template_functional__,
+  info_Tab___vue_styles__,
+  info_Tab___vue_scopeId__,
+  info_Tab___vue_module_identifier__
+)
+
+/* harmony default export */ var views_demo_info_Tab = (info_Tab_Component.exports);
+
 // CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-db1c6736","hasScoped":true,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Icon.vue
 var doc_Icon_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
 var doc_Icon_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"item"},[_c('h3',[_vm._v("使用方法")]),_vm._v(" "),_c('code',[_vm._v("<z-icon name=\"loading\" />")])])}]
@@ -22809,6 +23211,36 @@ var doc_Collapse_Component = doc_Collapse_normalizeComponent(
 
 /* harmony default export */ var demo_doc_Collapse = (doc_Collapse_Component.exports);
 
+// CONCATENATED MODULE: ../node_modules/_vue-loader@13.7.1@vue-loader/lib/template-compiler?{"id":"data-v-5eb78723","hasScoped":false,"transformToRequire":{"video":"src","source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=template&index=0!../example/views/demo/doc/Tab.vue
+var doc_Tab_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._v("\n123131\ndoc\n  ")])}
+var doc_Tab_staticRenderFns = []
+var doc_Tab_esExports = { render: doc_Tab_render, staticRenderFns: doc_Tab_staticRenderFns }
+/* harmony default export */ var doc_Tab = (doc_Tab_esExports);
+// CONCATENATED MODULE: ../example/views/demo/doc/Tab.vue
+var doc_Tab_normalizeComponent = __webpack_require__("AYo0")
+/* script */
+var Tab___vue_script__ = null
+/* template */
+
+/* template functional */
+var doc_Tab___vue_template_functional__ = false
+/* styles */
+var doc_Tab___vue_styles__ = null
+/* scopeId */
+var doc_Tab___vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var doc_Tab___vue_module_identifier__ = null
+var doc_Tab_Component = doc_Tab_normalizeComponent(
+  Tab___vue_script__,
+  doc_Tab,
+  doc_Tab___vue_template_functional__,
+  doc_Tab___vue_styles__,
+  doc_Tab___vue_scopeId__,
+  doc_Tab___vue_module_identifier__
+)
+
+/* harmony default export */ var demo_doc_Tab = (doc_Tab_Component.exports);
+
 // CONCATENATED MODULE: ../example/views/index.js
 // doc
 
@@ -22829,7 +23261,9 @@ var doc_Collapse_Component = doc_Collapse_normalizeComponent(
 
 
 
+
 // doc列表
+
 
 
 
@@ -22871,6 +23305,7 @@ vue_esm["a" /* default */].use(vue_router_esm)
     {path: '/tag', component: views_demo_info_Tag},
     {path: '/tabbar', component: views_demo_info_Tabbar},
     {path: '/collapse', component: views_demo_info_Collapse},
+    {path: '/tab', component: views_demo_info_Tab},
 
     {path: '/doc-icon', component: demo_doc_Icon},
     {path: '/doc-toast', component: demo_doc_Toast},
@@ -22884,7 +23319,8 @@ vue_esm["a" /* default */].use(vue_router_esm)
     {path: '/doc-cell', component: demo_doc_Cell},
     {path: '/doc-tag', component: demo_doc_Tag},
     {path: '/doc-tabbar', component: demo_doc_Tabbar},
-    {path: '/doc-collapse', component: demo_doc_Collapse}
+    {path: '/doc-collapse', component: demo_doc_Collapse},
+    {path: '/doc-tab', component: demo_doc_Tab}
   ]
 }));
 
@@ -22899,23 +23335,25 @@ var reset_default = /*#__PURE__*/__webpack_require__.n(style_reset);
 
 
 
-vue_esm["a" /* default */].config.productionTip = false
+vue_esm["a" /* default */].config.productionTip = false;
 
 
 
-vue_esm["a" /* default */].use(components_Icon)
-vue_esm["a" /* default */].use(components_Scroll)
-vue_esm["a" /* default */].use(components_Button)
-vue_esm["a" /* default */].use(components_Swipe)
-vue_esm["a" /* default */].use(components_Popup)
-vue_esm["a" /* default */].use(components_Notice)
-vue_esm["a" /* default */].use(components_Cell)
-vue_esm["a" /* default */].use(components_Cell.Item)
-vue_esm["a" /* default */].use(components_Tag)
-vue_esm["a" /* default */].use(components_Tabbar)
-vue_esm["a" /* default */].use(components_Tabbar.Item)
-vue_esm["a" /* default */].use(components_Collapse)
-vue_esm["a" /* default */].use(components_Collapse.Item)
+vue_esm["a" /* default */].use(components_Icon);
+vue_esm["a" /* default */].use(components_Scroll);
+vue_esm["a" /* default */].use(components_Button);
+vue_esm["a" /* default */].use(components_Swipe);
+vue_esm["a" /* default */].use(components_Popup);
+vue_esm["a" /* default */].use(components_Notice);
+vue_esm["a" /* default */].use(components_Cell);
+vue_esm["a" /* default */].use(components_Cell.Item);
+vue_esm["a" /* default */].use(components_Tag);
+vue_esm["a" /* default */].use(components_Tabbar);
+vue_esm["a" /* default */].use(components_Tabbar.Item);
+vue_esm["a" /* default */].use(components_Collapse);
+vue_esm["a" /* default */].use(components_Collapse.Item);
+vue_esm["a" /* default */].use(components_Tab);
+vue_esm["a" /* default */].use(components_Tab.Item);
 
 
 /* eslint-disable no-new */
@@ -23062,13 +23500,6 @@ module.exports = function (it, key) {
   return hasOwnProperty.call(it, key);
 };
 
-
-/***/ }),
-
-/***/ "hVZ0":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -23380,6 +23811,13 @@ module.exports = {
 
 /***/ }),
 
+/***/ "q+78":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "rBHx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23395,6 +23833,48 @@ module.exports = !__webpack_require__("IvmU")(function () {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "s4nl":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (immutable) */ __webpack_exports__["a"] = raf;
+/* unused harmony export cancel */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__("TTJ8");
+/**
+* requestAnimationFrame
+* */
+
+
+const isServer = __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].prototype.$isServer;
+let prev = Date.now();
+
+function fallback(fn) {
+  const curr = Date.now();
+  const ms = Math.max(0, 16 - (curr - prev))
+  const id = setTimeout(fn, ms)
+  prev = curr + ms
+
+  return id
+}
+
+const root = isServer ? global : window;
+
+const iRaf = root.requestAnimationFrame || root.webkitRequestAnimationFrame || fallback;
+
+const iCancel = root.cancelAnimationFrame || root.webkitCancelAnimationFrame || root.clearTimeout;
+
+function raf(fn) {
+  return iRaf.call(root, fn);
+}
+
+function cancel(id) {
+  iCancel.call(root, id);
+}
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("NLzl")))
 
 /***/ }),
 
