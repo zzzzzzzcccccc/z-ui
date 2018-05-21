@@ -1522,19 +1522,6 @@ to {
   cursor: pointer;
   position: relative;
 }
-.z-tab-title-item:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #000;
-  opacity: 0;
-}
-.z-tab-title-item:active:after {
-  opacity: 0.2;
-}
 .title-cell {
   white-space: nowrap;
   text-overflow: ellipsis;

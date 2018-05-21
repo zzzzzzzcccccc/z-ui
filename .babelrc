@@ -10,10 +10,7 @@
   ],
   "plugins": [
     "transform-vue-jsx",
-    "transform-runtime",
-    ["component", [
-      {"libraryName": "z-ui", "style": true}
-    ]]
+    "transform-runtime"
   ],
   "env": {
     "test": {

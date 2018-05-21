@@ -1,10 +1,10 @@
 {
-  "name": "z-ui",
-  "version": "1.0.0",
+  "name": "vzc-ui",
+  "version": "1.0.7",
   "description": "A Vue.js project",
   "author": "zc <z304307393@163.com>",
-  "private": true,
-  "main": "",
+  "private": false,
+  "main": "lib/z-ui.min.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/example/webpack.dev.conf.js",
     "start": "npm run dev",
